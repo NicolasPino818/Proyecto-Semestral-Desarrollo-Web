@@ -19,39 +19,52 @@
     <!--Menu-->
 
     <nav
-      class="navbar navbar-expand-lg navbar navbar sticky-top"
-      style="background-color: rgb(207, 207, 207)"
+      class="navbar navbar-expand-md navbar-light sticky-top"
+      style="background-color: rgb(236, 236, 236)"
     >
       <!--Imagen Menu-->
       <a class="navbar-brand" href="index.html">
         <img
           src="img/decoiart-png-logo.png"
-          width="250"
-          height="150"
+          width="220"
+          height="130"
           alt="Imagen de la marca"
+          style="object-fit: contain"
         />
       </a>
-      <!--Links-->
-      <div
-        class="collapse navbar-collapse flex-grow-1 text-right"
-        id="myNavbar"
+      <!--Boton Movil-->
+
+      <button
+        class="navbar-toggler"
+        data-toggle="collapse"
+        data-target="#myNavbar"
       >
-        <ul class="navbar-nav ml-auto flex-nowrap" style="font-size: 24px">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Inicio <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Portafolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
-          </li>
-        </ul>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!--Links-->
+      <div class="container">
+        <div
+          class="collapse navbar-collapse flex-grow-1 text-right"
+          id="myNavbar"
+        >
+          <ul class="navbar-nav ml-auto flex-nowrap" style="font-size: 24px">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html" style="padding-left: 15px"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item" style="padding-left: 15px">
+              <a class="nav-link" href="#">Nosotros</a>
+            </li>
+            <li class="nav-item" style="padding-left: 15px">
+              <a class="nav-link" href="#">Portafolio</a>
+            </li>
+            <li class="nav-item" style="padding-left: 15px">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
