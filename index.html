@@ -54,10 +54,28 @@
                 >Inicio</a
               >
             </li>
-            <li class="nav-item" style="padding-left: 15px">
-              <a class="nav-link active" href="html/productos.html"
-                >Productos</a
-              >
+            <li class="nav-item dropdown" style="padding-left: 15px">
+              <a
+                class="nav-link active dropdown-toggle"
+                data-toggle="dropdown"
+                data-target="drop-tienda"
+                href="#"
+                >Tienda <span class="caret"></span
+              ></a>
+              <div class="dropdown-menu" aria-labelledby="drop-tienda">
+                <a class="dropdown-item" href="html/ropa-hombre.html"
+                  >Ropa para Hombre</a
+                >
+                <a class="dropdown-item" href="html/ropa-mujer.html"
+                  >Ropa para Mujer</a
+                >
+                <a class="dropdown-item" href="html/ropa-nino.html"
+                  >Ropa para Niño</a
+                >
+                <a class="dropdown-item" href="html/ropa-nina.html"
+                  >Ropa para Niña</a
+                >
+              </div>
             </li>
             <li class="nav-item active" style="padding-left: 15px">
               <a class="nav-link" href="html/nosotros.html">Nosotros</a>
@@ -82,13 +100,15 @@
         ></li>
         <li data-target="#carousel-Indicators" data-slide-to="1"></li>
         <li data-target="#carousel-Indicators" data-slide-to="2"></li>
+        <li data-target="#carousel-Indicators" data-slide-to="3"></li>
+        <li data-target="#carousel-Indicators" data-slide-to="4"></li>
       </ol>
       <div id="slide" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <!--Imagen Slide 1-->
           <div class="carousel-item active">
             <img
-              src="img/Portada.jpg"
+              src="img/Portada 3.jpg"
               class="d-block w-100"
               alt="Foto de tienda"
               style="object-fit: contain"
@@ -119,7 +139,7 @@
           <!--Imagen Slide 2-->
           <div class="carousel-item">
             <img
-              src="img/portada ropa hombre.jpg"
+              src="img/Man Clothes.jpg"
               class="d-block w-100"
               alt="Ropa de hombre"
               style="object-fit: contain"
@@ -138,7 +158,7 @@
               </h5>
               <a
                 class="btn btn-primary btn-lg"
-                href="html/productos.html"
+                href="html/ropa-hombre.html"
                 role="button"
                 >Ver Ropa de Hombre</a
               >
@@ -147,7 +167,7 @@
           <!--Imagen Slide 3-->
           <div class="carousel-item">
             <img
-              src="img/portada ropa mujer.jpg"
+              src="img/Woman Clothes.jpg"
               class="d-block w-100"
               alt="Ropa de mujer"
               style="object-fit: contain"
@@ -166,13 +186,73 @@
               </h5>
               <a
                 class="btn btn-primary btn-lg"
-                href="html/productos.html"
+                href="html/ropa-mujer.html"
                 role="button"
                 >Ver Ropa de Mujer</a
               >
             </div>
           </div>
+          <!--Imagen Slide 4-->
+          <div class="carousel-item">
+            <img
+              src="img/ropa niño.jpg"
+              class="d-block w-100"
+              alt="Ropa de mujer"
+              style="object-fit: contain"
+            />
+            <!--Texto Slide 3-->
+            <div class="carousel-caption d-none d-md-block">
+              <h5
+                style="
+                  color: black;
+                  font-size: 50px;
+                  padding-bottom: 20px;
+                  background-color: wheat;
+                "
+              >
+                Ropa de Niño
+              </h5>
+              <a
+                class="btn btn-primary btn-lg"
+                href="html/ropa-nino.html"
+                role="button"
+                >Ver Ropa de Niño</a
+              >
+            </div>
+          </div>
+           <!--Imagen Slide 5-->
+          <div class="carousel-item">
+          <img
+            src="img/ropa niña.jpg"
+            class="d-block w-100"
+            alt="Ropa de mujer"
+            style="object-fit: contain"
+          />
+          <!--Texto Slide 5-->
+          <div class="carousel-caption d-none d-md-block">
+            <h5
+              style="
+              color: black;
+              font-size: 50px;
+              padding-bottom: 20px;
+              background-color: wheat;
+            "
+            >
+              Ropa de Niña
+            </h5>
+            <a
+              class="btn btn-primary btn-lg"
+              href="html/ropa-nina.html"
+              role="button"
+              >Ver Ropa de Niña</a
+            >
         </div>
+      </div>
+        </div>
+     
+    </div>
+      </div>
+        
         <a
           class="carousel-control-prev"
           href="#carousel-Indicators"
