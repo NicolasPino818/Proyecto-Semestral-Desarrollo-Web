@@ -1,2 +1,2 @@
 # Proyecto-Semestral-Desarrollo-Web
-proyecto semestral (decoiart.cl)
+proyecto semestral
