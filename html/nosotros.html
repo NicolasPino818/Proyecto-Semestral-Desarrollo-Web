@@ -8,24 +8,23 @@
 
     <!--Link Bootstrap-->
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
     <!--Link Bootstrap-->
     <title>Reply Moda - Nosotros</title>
   </head>
+  
   <body>
     <!--Menu-->
 
     <nav
-      class="navbar navbar-expand-md navbar-dark fixed-top p-md-3"
-      style="background-color: rgba(41, 27, 11, 0.582)"
+      class="navbar navbar-expand-md navbar-dark sticky-top p-md-3 my-navbar-bg-color"
     >
       <!--Imagen Menu-->
       <a class="navbar-brand" href="../index.html">
         <img
+          class="my-img-fit-contain my-brand-logo-size"
           src="../img/Logo.png"
-          width="200"
-          height="100"
           alt="Imagen de la marca"
-          style="object-fit: contain"
         />
       </a>
       <!--Boton Movil-->
@@ -44,16 +43,13 @@
           class="collapse navbar-collapse flex-grow-1 text-right"
           id="myNavbar"
         >
-          <ul class="navbar-nav ml-auto flex-nowrap" style="font-size: 24px">
+          <ul class="navbar-nav ml-auto flex-nowrap my-text-font-24">
             <li class="nav-item active">
-              <a
-                class="nav-link"
-                href="../index.html"
-                style="padding-left: 15px"
+              <a class="nav-link my-nav-text-padding" href="../index.html"
                 >Inicio</a
               >
             </li>
-            <li class="nav-item dropdown" style="padding-left: 15px">
+            <li class="nav-item dropdown my-nav-text-padding">
               <a
                 class="nav-link active dropdown-toggle"
                 data-toggle="dropdown"
@@ -61,47 +57,121 @@
                 href="#"
                 >Tienda <span class="caret"></span
               ></a>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="drop-tienda"
-                style="background-color: rgba(41, 27, 11, 0.582)"
-              >
-                <a
-                  class="dropdown-item"
-                  href="ropa-hombre.html"
-                  style="color: white"
+              <div class="dropdown-menu my-navbar-drop-bg-color" aria-labelledby="drop-tienda">
+                <a class="dropdown-item text-black font-weight-bold" href="../html/ropa-hombre.html"
                   >Ropa para Hombre</a
                 >
-                <a
-                  class="dropdown-item"
-                  href="ropa-mujer.html"
-                  style="color: white"
+                <a class="dropdown-item text-black font-weight-bold" href="../html/ropa-mujer.html"
                   >Ropa para Mujer</a
                 >
-                <a
-                  class="dropdown-item"
-                  href="ropa-nino.html"
-                  style="color: white"
+                <a class="dropdown-item text-black font-weight-bold" href="../html/ropa-nino.html"
                   >Ropa para Niño</a
                 >
-                <a
-                  class="dropdown-item"
-                  href="ropa-nina.html"
-                  style="color: white"
+                <a class="dropdown-item text-black font-weight-bold" href="../html/ropa-nina.html"
                   >Ropa para Niña</a
                 >
               </div>
             </li>
-            <li class="nav-item active" style="padding-left: 15px">
-              <a class="nav-link" href="nosotros.html">Nosotros</a>
+            <li class="nav-item active my-nav-text-padding">
+              <a class="nav-link" href="../html/nosotros.html">Nosotros</a>
             </li>
-            <li class="nav-item active" style="padding-left: 15px">
-              <a class="nav-link" href="contacto.html">Contacto</a>
+            <li class="nav-item active my-nav-text-padding">
+              <a class="nav-link" href="../html/contacto.html">Contacto</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <!--Footer-->
+    
+    <footer class="bg-dark text-lg-start text-center">
+      <div class="container p-4 my-footer-padding">
+        <!--Div Fila contenido-->
+        <div class="row py-4 d-flex align-items-center">
+          <!--Logo y Mensaje-->
+          <div class="col-md text-center text-white">
+            <img 
+              class="my-img-fit-contain my-brand-logo-size"
+              src="../img/Logo.png" 
+              alt="Logo de la página" 
+            >
+            <p class="my-text-justify">
+              Lorem ipsum dolor sit amet, 
+              consectetur adipisicing elit. Fuga in, 
+              harum est alias natus possimus hic recusandae 
+              tempora commodi obcaecati quam cum reiciendis repellendus modi, 
+              quasi exercitationem labore qui adipisci!
+            </p>
+          </div>
+          <!--Menu secundario-->
+          <div class="col-md text-center">
+            <h6 class="text-white text-uppercase font-weight-bold my-pb-10 my-text-font-24">Menú</h6>
+            <ul class="navbar-nav ml-auto flex-nowrap">
+              <li class="nav-item active">
+                <a href="../index.html" class="text-white my-text-font-18">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                class="nav-link active dropdown-toggle text-white my-text-font-18"
+                data-toggle="dropdown"
+                data-target="drop-tienda"
+                href="#"
+                >Tienda <span class="caret"></span                  ></a>
+                <div class="dropdown-menu my-navbar-drop-bg-color" aria-labelledby="drop-tienda">
+                  <a class="dropdown-item text-black font-weight-bold" href="../html/ropa-hombre.html"
+                    >Ropa para Hombre</a
+                  >
+                  <a class="dropdown-item text-black font-weight-bold" href="../html/ropa-mujer.html"
+                    >Ropa para Mujer</a
+                  >
+                  <a class="dropdown-item text-black font-weight-bold" href="../html/ropa-nino.html"
+                        >Ropa para Niño</a
+                  >
+                  <a class="dropdown-item text-black font-weight-bold" href="../html/ropa-nina.html"
+                    >Ropa para Niña</a
+                  >
+                </div>
+                </li>
+                  <li class="nav-item">
+                    <a href="../html/nosotros.html" class="text-white my-text-font-18">Nosotros</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../html/contacto.html" class="text-white my-text-font-18">Contacto</a>
+                  </li>
+                </ul>
+              </div>
+              <!--Social-->
+              <div class="col-md text-center">
+                <h6 class="text-white text-uppercase font-weight-bold my-pb-10 my-text-font-24">Contacto</h6>
+                <p class="text-white my-pb-15 my-pt-15"><b>Dirección:</b><br>
+                  Calle El Labrador, 16844, Maipú, Chile <br>
+                  <b>Número de contacto:</b><br>
+                  (2)9324650
+                </p>
+                <a href="https://www.facebook.com" target="_blank">
+                  <i class="mr-4">
+                    <img src="../img/facebook.png" alt="icono facebook" class="my-footer-social-icon-size">
+                  </i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                  <i class="mr-4">
+                    <img src="../img/instagram.png" alt="icono instagram" class="my-footer-social-icon-size">
+                  </i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                  <i>
+                    <img src="../img/twitter.png" alt="icono twitter" class="my-footer-social-icon-size">
+                  </i>
+                </a>
+              </div>
+            </div>
+          </div>
+            <!--Div fila derechos-->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              <h6 class="text-white text-uppercase">Copyright © 2021 Reply Moda</h6>
+            </div>
+          <!--Footer End-->
 
     <!--No se pone nada abajo de esto-->
     <!--JQuery-->
