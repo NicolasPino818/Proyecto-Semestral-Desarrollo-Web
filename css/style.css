@@ -25,6 +25,10 @@
 .my-img-fit-cover {
   object-fit: cover;
 }
+.my-search-icon-size {
+  height: 25px;
+  width: 25px;
+}
 
 /*Text*/
 .my-nav-text-padding {
@@ -115,4 +119,8 @@
 }
 .my-wt-hr {
   background-color: white;
+}
+/*Boton*/
+.my-btn-bg-red {
+  background-color: red;
 }
