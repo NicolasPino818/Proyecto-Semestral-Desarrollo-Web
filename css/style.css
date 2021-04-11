@@ -81,3 +81,38 @@
 .my-pt-15 {
   padding-top: 15px;
 }
+.my-pt-200 {
+  padding-top: 200px;
+}
+.my-pb-200 {
+  padding-bottom: 200px;
+}
+.my-pt-120 {
+  padding-top: 120px;
+}
+.my-pb-120 {
+  padding-bottom: 120px;
+}
+/*Contact page banner*/
+.my-contact-banner-bg-image {
+  background-image: url("../img/Portada.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*Contact page form background*/
+.my-fondo-formulario-contacto {
+  background-image: url("../img/fondo formulario.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.my-white-tp-bg {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.my-bk-hr {
+  background-color: black;
+}
+.my-wt-hr {
+  background-color: white;
+}
