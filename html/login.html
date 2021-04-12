@@ -8,7 +8,7 @@
 
     <!--Link Bootstrap-->
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
     <!--Link Bootstrap-->
     <title>Reply Moda - Login</title>
   </head>
@@ -89,31 +89,45 @@
       </div>
     </nav>
     <!--Contenido-->
-    <div class="container my-pb-120 my-pt-120">
-      <h5 class="text-center my-text-font-50 my-pb-30">Mi Cuenta</h5>
-      <div class="row justify-content-center">
-        <div class="col-md-4 mr-4 ml-4" style="background-color: rgb(146, 146, 146); border-radius: 15px;">
-          <div>
-            <div class="form-group my-text-left">
-              <label class="my-text-font-24">Usuario</label>
-              <input type="text" class="form-control">
-            </div>
-            <div class="form-group my-text-left">
-              <label class="my-text-font-24 text-center">Contraseña</label>
-              <input type="password" name="Contraseña" id="pass">
-            </div>
-            <div class="form-group text-center">
-              <button class="btn btn-primary btn block w-50">
-                Entrar
-              </button>
-            </div>
-            <div class="text-center">
-              <h5>¿No tienes cuenta? <a href="../html/registro.html" class="text-white"><u>Registrarme</u></a></h5>
-            </div>
+    
+
+    <main>
+      <div class="contenedor_todo">
+          <div class="detras">
+              <div class="detras_login">
+                  <h3>¿Ya tienes cuenta?</h3>
+                  <h3>Inicia Sesion para entrar en la pagina</h3>
+                  <button id="btn_iniciar_sesion">Iniciar Sesion</button>
+              </div>
+              <div class="detras_registro">
+                  <h3>¿Aun no tienes cuenta?</h3>
+                  <h3>Registrate para que puedas iniciar sesion</h3>
+                  <button id="btn_registrarse">Registrarse</button>
+
+              </div>
+          </div>
+          <div class="contenedor_login_register">
+              <form action="" class="formulario_login">
+                  <h2>Iniciar Sesion</h2>
+                  <input type="text" placeholder="Correo Electronico">
+                  <input type="password" placeholder="Contraseña">
+                  <button> Iniciar Sesion</button>
+              </form>
+              <form action="" class="formulario_register">
+                  <h2>Registrarse</h2>
+                  <input type="text" placeholder="Nombre ">
+                  <input type="text" placeholder="Apellido ">
+                  <input type="text" placeholder="Correo Electronico">
+                  <input type="password" placeholder="Contraseña">
+                  <button> Registrarse</button>
+              </form>
           </div>
         </div>
-      </div>
-    </div>
+    </main>
+
+    <script src="../js/login.js" ></script>
+
+
     <!--Footer-->
     
     <footer class="bg-dark text-lg-start text-center">
