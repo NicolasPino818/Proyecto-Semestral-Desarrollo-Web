@@ -103,6 +103,10 @@
 .my-pb-120 {
   padding-bottom: 120px;
 }
+.my-espaciador {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 /*Contact page banner*/
 .my-contact-banner-bg-image {
   background-image: url("../img/Portada.jpg");
