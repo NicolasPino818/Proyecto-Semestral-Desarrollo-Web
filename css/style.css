@@ -8,11 +8,14 @@
   background-color: rgb(53, 53, 53);
 }
 .my-navbar-drop-bg-color {
-  background-color: rgba(92, 80, 57, 0.829);
+  background-color: rgba(184, 161, 118, 0.829);
 }
 .my-brand-logo-size {
   width: 200px;
   height: 100px;
+}
+.my-sd-nav-bg-color {
+  background-color: rgb(65, 65, 65);
 }
 /*Pantalla*/
 .my-screen-size {
@@ -42,6 +45,9 @@
 }
 .my-text-font-18 {
   font-size: 18px;
+}
+.my-text-font-50 {
+  font-size: 50px;
 }
 .my-footer-social-icon-size {
   height: 30px;

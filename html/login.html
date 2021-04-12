@@ -10,19 +10,18 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css">
     <!--Link Bootstrap-->
-    <title>Reply Moda - Ropa Hombre</title>
+    <title>Reply Moda - Login</title>
   </head>
   
   <body>
     <nav class="navbar navbar-expand-md sticky-top p-md-3 my-sd-nav-bg-color">
-      <div class="container">
-        <div class="flex-grow-1 text-right">
-          <h5  class="text-white">Mi Cuenta: <a href="../html/login.html" class="text-white">Entrar</a></h5>
+        <div class="container">
+          <div class="flex-grow-1 text-right">
+            <h5  class="text-white">Mi Cuenta: <a href="../html/login.html" class="text-white">Entrar</a></h5>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     <!--Menu-->
-
     <nav
       class="navbar navbar-expand-md navbar-dark sticky-top p-md-3 my-navbar-bg-color"
     >
@@ -89,7 +88,32 @@
         </div>
       </div>
     </nav>
-
+    <!--Contenido-->
+    <div class="container my-pb-120 my-pt-120">
+      <h5 class="text-center my-text-font-50 my-pb-30">Mi Cuenta</h5>
+      <div class="row justify-content-center">
+        <div class="col-md-4 mr-4 ml-4" style="background-color: rgb(146, 146, 146); border-radius: 15px;">
+          <div>
+            <div class="form-group my-text-left">
+              <label class="my-text-font-24">Usuario</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group my-text-left">
+              <label class="my-text-font-24 text-center">Contraseña</label>
+              <input type="password" name="Contraseña" id="pass">
+            </div>
+            <div class="form-group text-center">
+              <button class="btn btn-primary btn block w-50">
+                Entrar
+              </button>
+            </div>
+            <div class="text-center">
+              <h5>¿No tienes cuenta? <a href="../html/registro.html" class="text-white"><u>Registrarme</u></a></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--Footer-->
     
     <footer class="bg-dark text-lg-start text-center">
