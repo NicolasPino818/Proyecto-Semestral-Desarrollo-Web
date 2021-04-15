@@ -107,6 +107,12 @@
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
+/*Margin*/
+.my-mg-4 {
+  margin: 4px;
+}
+
 /*Contact page banner*/
 .my-contact-banner-bg-image {
   background-image: url("../img/Portada.jpg");
