@@ -1,3 +1,8 @@
+$(document).ready(function () {
+    console.log("funcionando el jquery");
+});
+
+
 document.getElementById("btn_registrarse").addEventListener("click", register);
 document.getElementById("btn_iniciar_sesion").addEventListener("click", IniciarSesion);
 window.addEventListener("resize", anchopagina);
@@ -58,6 +63,4 @@ function register() {
         detras_login.style.display = "block";
         detras_login.style.opacity = "1";
     }
-
-
 }
