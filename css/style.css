@@ -140,3 +140,10 @@
 .my-btn-bg-red {
   background-color: red;
 }
+.my-campo-correcto {
+  color: #1ed12d;
+}
+
+.my-campo-incorrecto {
+  color: #bb2929;
+}
