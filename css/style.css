@@ -147,3 +147,13 @@
 .my-campo-incorrecto {
   color: #bb2929;
 }
+
+/*GOOGLE MAPS*/
+  
+#map {
+	height: 300px;
+	width: 100%;
+}
+#gmap {
+  color: bisque;
+}
