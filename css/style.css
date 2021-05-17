@@ -3,23 +3,31 @@
   padding-top: 25px;
   padding-bottom: 25px;
 }
+
 /*NavBar*/
-.my-navbar-bg-color {
-  background-color: rgb(53, 53, 53);
-}
-.my-navbar-drop-bg-color {
-  background-color: rgba(184, 161, 118, 0.829);
-}
 .my-brand-logo-size {
   width: 200px;
   height: 100px;
 }
+.my-navbar-bg-color {
+  background-color: rgb(53, 53, 53);
+  height: 50px;
+  width: 100%;
+}
+
+.my-navbar-drop-bg-color {
+  background-color: rgba(184, 161, 118, 0.829);
+}
+
 .my-sd-nav-bg-color {
   background-color: rgb(65, 65, 65);
+  height: 30px;
+  width: 100%;
 }
 /*Pantalla*/
 .my-screen-size {
   width: 100%;
+  position: relative;
 }
 /*Img*/
 .my-img-fit-contain {
@@ -151,11 +159,11 @@
 /*GOOGLE MAPS*/
 
 #map {
-  height: 300px;
+  height: 200px;
   width: 100%;
 }
 #gmap {
-  color: rgb(51, 51, 51);
+  color: rgb(204, 240, 187);
 }
 
 .error_nombre_r {
