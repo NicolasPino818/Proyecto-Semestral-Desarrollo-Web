@@ -20,6 +20,7 @@
 /*Pantalla*/
 .my-screen-size {
   width: 100%;
+  
 }
 /*Img*/
 .my-img-fit-contain {
@@ -151,11 +152,11 @@
 /*GOOGLE MAPS*/
 
 #map {
-  height: 300px;
+  height: 200px;
   width: 100%;
 }
 #gmap {
-  color: rgb(51, 51, 51);
+  color: rgb(204, 240, 187);
 }
 
 .error_nombre_r {
