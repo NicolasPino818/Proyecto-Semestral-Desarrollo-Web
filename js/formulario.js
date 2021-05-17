@@ -17,22 +17,13 @@ const validarFormulario_l = (e) => {
         case "email_login":
             if (expresiones.correo.test(e.target.value)) {
                 document.getElementById('email_login').classList.remove('my-campo-incorrecto');
+                document.querySelector('#error_email_l').classList.remove('error_email_l-activo');
             }
             else {
                 document.getElementById('email_login').classList.add('my-campo-incorrecto');
+                document.querySelector('#error_email_l').classList.add('error_email_l-activo');
             };
         break;
-        /*
-        case "pass_login":
-            if (expresiones.password.test(e.target.value)) {
-                document.getElementById('pass_login').classList.remove('my-campo-incorrecto');
-            } 
-            else {
-                document.getElementById('pass_login').classList.add('my-campo-incorrecto');
-            };
-
-        break;
-        */
     };
 };
 
@@ -41,27 +32,33 @@ const validarFormulario_r = (e) => {
         case "nombre_registro":
             if (expresiones.nombre.test(e.target.value)) {
                 document.getElementById('nombre_registro').classList.remove('my-campo-incorrecto');
+                document.querySelector('#error_nombre_r').classList.remove('error_nombre_r-activo');
             }
             else {
                 document.getElementById('nombre_registro').classList.add('my-campo-incorrecto');
+                document.querySelector('#error_nombre_r').classList.add('error_nombre_r-activo');
             };
         break;
 
         case "apellido_registro":
             if (expresiones.nombre.test(e.target.value)) {
                 document.getElementById('apellido_registro').classList.remove('my-campo-incorrecto');
+                document.querySelector('#error_apellido_r').classList.remove('error_apellido_r-activo');
             }
             else {
                 document.getElementById('apellido_registro').classList.add('my-campo-incorrecto');
+                document.querySelector('#error_apellido_r').classList.add('error_apellido_r-activo');
             };
         break;
 
         case "email_registro":
             if (expresiones.correo.test(e.target.value)) {
                 document.getElementById('email_registro').classList.remove('my-campo-incorrecto');
+                document.querySelector('#error_email_r').classList.remove('error_email_r-activo');
             }
             else {
                 document.getElementById('email_registro').classList.add('my-campo-incorrecto');
+                document.querySelector('#error_email_r').classList.add('error_email_r-activo');
             };
         break;
 
