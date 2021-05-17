@@ -1,0 +1,104 @@
+const formulario_l = document.getElementById('login');
+const input_l = document.querySelectorAll('#login input');
+
+const formulario_r = document.getElementById('registro');
+const input_r = document.querySelectorAll('#registro input');
+
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar tildes.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
+
+const validarFormulario_l = (e) => {
+    switch (e.target.name) {
+        case "email_login":
+            if (expresiones.correo.test(e.target.value)) {
+                document.getElementById('email_login').classList.remove('my-campo-incorrecto');
+            }
+            else {
+                document.getElementById('email_login').classList.add('my-campo-incorrecto');
+            };
+        break;
+        /*
+        case "pass_login":
+            if (expresiones.password.test(e.target.value)) {
+                document.getElementById('pass_login').classList.remove('my-campo-incorrecto');
+            } 
+            else {
+                document.getElementById('pass_login').classList.add('my-campo-incorrecto');
+            };
+
+        break;
+        */
+    };
+};
+
+const validarFormulario_r = (e) => {
+    switch (e.target.name) {
+        case "nombre_registro":
+            if (expresiones.nombre.test(e.target.value)) {
+                document.getElementById('nombre_registro').classList.remove('my-campo-incorrecto');
+            }
+            else {
+                document.getElementById('nombre_registro').classList.add('my-campo-incorrecto');
+            };
+        break;
+
+        case "apellido_registro":
+            if (expresiones.nombre.test(e.target.value)) {
+                document.getElementById('apellido_registro').classList.remove('my-campo-incorrecto');
+            }
+            else {
+                document.getElementById('apellido_registro').classList.add('my-campo-incorrecto');
+            };
+        break;
+
+        case "email_registro":
+            if (expresiones.correo.test(e.target.value)) {
+                document.getElementById('email_registro').classList.remove('my-campo-incorrecto');
+            }
+            else {
+                document.getElementById('email_registro').classList.add('my-campo-incorrecto');
+            };
+        break;
+
+        case "pass_registro":
+            if (expresiones.password.test(e.target.value)) {
+                document.getElementById('pass_registro').classList.remove('my-campo-incorrecto');
+            }
+            else {
+                document.getElementById('pass_registro').classList.add('my-campo-incorrecto');
+            };
+        break;
+
+        case "pass_registro2":
+            if (expresiones.password.test(e.target.value)) {
+                document.getElementById('pass_registro2').classList.remove('my-campo-incorrecto');
+            }
+            else {
+                document.getElementById('pass_registro2').classList.add('my-campo-incorrecto');
+            };
+        break;
+    };
+};
+
+input_l.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario_l);
+    input.addEventListener('blur', validarFormulario_l);
+});
+
+formulario_l.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+
+formulario_r.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+
+input_r.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario_r);
+    input.addEventListener('blur', validarFormulario_r);
+});
