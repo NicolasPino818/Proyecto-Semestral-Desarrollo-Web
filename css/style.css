@@ -149,11 +149,46 @@
 }
 
 /*GOOGLE MAPS*/
-  
+
 #map {
-	height: 300px;
-	width: 100%;
+  height: 300px;
+  width: 100%;
 }
 #gmap {
-  color: bisque;
+  color: rgb(51, 51, 51);
+}
+
+.error_nombre_r {
+  display: none;
+}
+.error_nombre_r-activo {
+  display: block;
+  color: #bb2929;
+}
+
+.error_apellido_r {
+  display: none;
+}
+
+.error_apellido_r-activo {
+  display: block;
+  color: #bb2929;
+}
+
+.error_email_r {
+  display: none;
+}
+
+.error_email_r-activo {
+  display: block;
+  color: #bb2929;
+}
+
+.error_email_l {
+  display: none;
+}
+
+.error_email_l-activo {
+  display: block;
+  color: #bb2929;
 }
