@@ -198,3 +198,31 @@
   display: block;
   color: #bb2929;
 }
+
+/*CLIMA API*/
+.card{
+  width: 80%;
+  background: #05f0dc;
+  height: 50px auto;
+  margin: 10px ;
+  border-radius: 2px;
+}
+
+
+.close{
+  float: right;
+  margin-top: 10px;
+  cursor: pointer;
+  
+}
+
+.card h1{
+  padding: 1px 0;
+  text-align: center;
+}
+
+.card p{
+  text-align: center;
+  margin:5px 0;
+  font-size:20px;
+}
