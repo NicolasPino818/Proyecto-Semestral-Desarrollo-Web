@@ -121,10 +121,12 @@
                 <div class="form-group my-text-left">
                   <label for="nombre">Nombre</label>
                   <input type="text" name="nombre" id="nombre" placeholder="Ej: Marcos Parra" class="form-control">
+                  <p class="error_nombre_r" id="error_nombre_r">Este campo no puede contener numeros ni simbolos, el texto no puede superar los 16 caracteres ni tener menos de 4</p>
                 </div>
                 <div class="form-group my-text-left">
                   <label for="email">Email</label>
                   <input type="text" name="email" id="email" placeholder="ejemplo@correo.com" class="form-control">
+                  <p class="error_email_l" id="error_email_l">este campo debe tener una estructura de correo valido: ejemplo@correo.com</p>
                 </div>
                 <div class="form-group my-text-left">
                   <label for="mensaje_contacto">Mensaje</label>
@@ -250,12 +252,7 @@
     <!--Bootstrap-->
     <script src="../js/bootstrap.min.js"></script>
     <!--No se pone nada abajo de esto-->
+    <script src="../js/formulario.js"></script>
 
-    <script>
-      
-      $("#formulario_contacto").submit(function(){
-        
-      });
-    </script>
   </body>
 </html>
