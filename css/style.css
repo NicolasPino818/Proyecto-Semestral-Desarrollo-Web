@@ -172,6 +172,14 @@
   color: #bb2929;
 }
 
+.error_nombre_c {
+  display: none;
+}
+.error_nombre_c-activo {
+  display: block;
+  color: #bb2929;
+}
+
 .error_apellido_r {
   display: none;
 }
@@ -199,30 +207,37 @@
   color: #bb2929;
 }
 
+.error_email_c {
+  display: none;
+}
+
+.error_email_c-activo {
+  display: block;
+  color: #bb2929;
+}
+
 /*CLIMA API*/
-.card{
+.card {
   width: 80%;
   background: #05f0dc;
   height: 50px auto;
-  margin: 10px ;
+  margin: 10px;
   border-radius: 2px;
 }
 
-
-.close{
+.close {
   float: right;
   margin-top: 10px;
   cursor: pointer;
-  
 }
 
-.card h1{
+.card h1 {
   padding: 1px 0;
   text-align: center;
 }
 
-.card p{
+.card p {
   text-align: center;
-  margin:5px 0;
-  font-size:20px;
+  margin: 5px 0;
+  font-size: 20px;
 }

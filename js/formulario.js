@@ -4,6 +4,9 @@ const input_l = document.querySelectorAll('#login input');
 const formulario_r = document.getElementById('registro');
 const input_r = document.querySelectorAll('#registro input');
 
+const formulario_c = document.getElementById('formulario_contacto');
+const input_c = document.querySelectorAll('#formulario_contacto input');
+
 const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar tildes.
@@ -11,6 +14,34 @@ const expresiones = {
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
+
+const validarFormulario_c = (e) => {
+    switch (e.target.name) {
+        case "nombre_contacto":
+            console.log('nombre funciona');
+            if (expresiones.nombre.test(e.target.value)) {
+                document.getElementById('nombre_contacto').classList.remove('my-campo-incorrecto');
+                document.querySelector('#error_nombre_c').classList.remove('error_nombre_c-activo');
+            }
+            else {
+                document.getElementById('nombre_contacto').classList.add('my-campo-incorrecto');
+                document.querySelector('#error_nombre_c').classList.add('error_nombre_c-activo');
+            };
+        break;
+
+        case "email_contacto":
+            console.log('correo funciona');
+            if (expresiones.correo.test(e.target.value)) {
+                document.getElementById('email_contacto').classList.remove('my-campo-incorrecto');
+                document.querySelector('#error_email_c').classList.remove('error_email_c-activo');
+            }
+            else {
+                document.getElementById('email_contacto').classList.add('my-campo-incorrecto');
+                document.querySelector('#error_email_c').classList.add('error_email_c-activo');
+            };
+        break;
+    };
+};
 
 const validarFormulario_l = (e) => {
     switch (e.target.name) {
@@ -98,4 +129,13 @@ formulario_r.addEventListener('submit', (e) => {
 input_r.forEach((input) => {
     input.addEventListener('keyup', validarFormulario_r);
     input.addEventListener('blur', validarFormulario_r);
+});
+
+formulario_c.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+
+input_c.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario_c);
+    input.addEventListener('blur', validarFormulario_c);
 });
