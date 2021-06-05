@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import user
 
 # Create your views here.
 
@@ -31,5 +32,8 @@ def ropanina(request):
 
 def ropanino(request):
     return render(request, 'web/ropanino.html')
+
+def userscrud(request):
+    return render(request, 'web/userscrud.html')
 
     
