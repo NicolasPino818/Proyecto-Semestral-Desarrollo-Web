@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class user(models.Model):
@@ -11,6 +12,13 @@ class user(models.Model):
 
     def __str__(self):
         return self.email
-    
 
+class contacto(models.Model):
 
+    name = models.CharField( max_length=50)
+    email = models.CharField( max_length=200)
+    msn = models.CharField( max_length=300)
+
+    def __str__(self):
+        return self.name
+        

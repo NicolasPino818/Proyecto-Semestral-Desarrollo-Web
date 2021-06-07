@@ -1,0 +1,55 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block contenido %}
+    <div class="container">
+    <!-- AGREGAR USUARIO DESDE ADMIN -->
+        <br>
+        <br>
+        <form class="row g-3">
+            <div class="col-md-4">
+                <label for="validationServer01" class="form-label">First name</label>
+                <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+                <div class="valid-feedback">
+     
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationServer02" class="form-label">Last name</label>
+                <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+                <div class="valid-feedback">
+              
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationServerUsername" class="form-label">E-mail</label>
+                <div class="input-group has-validation">
+                <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    
+                </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="validationServer03" class="form-label">Password</label>
+                <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+                <div id="validationServer03Feedback" class="invalid-feedback"></div>
+            </div>
+            
+            <div class="col-md-3">
+                <label for="validationServer05" class="form-label">repeat to Password</label>
+                <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+                <div id="validationServer05Feedback" class="invalid-feedback">
+                </div>
+            </div>
+            
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+        </form>
+        <!-- FIN AGREGAR USUARIO DESDE ADMIN -->
+    </div>
+    <br>
+    <br>
+{% endblock contenido %}
+
+

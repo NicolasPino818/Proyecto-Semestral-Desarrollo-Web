@@ -1,0 +1,17 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block contenido %}
+
+    <div class="container">
+       
+        <form class="formulario_usuario" action="#">
+            
+            {{ registroForm }}
+
+            <input type="submit" value="Registrarse" class = "button">
+            
+        </form>
+       
+    </div>
+
+{% endblock contenido %}

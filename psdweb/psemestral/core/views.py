@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import user
+from .forms import contactForm
 
 # Create your views here.
 
@@ -9,8 +10,11 @@ def index(request):
 def contacto(request):
     return render(request, 'web/contacto.html')
 
-def login(request):
-    return render(request, 'web/login.html')
+def register(request):
+    data = {
+        'form' : contactForm()
+    }
+    return render(request, 'web/register.html', data)
 
 def modelo(request):
     return render(request, 'web/modelo.html')
@@ -34,6 +38,16 @@ def ropanino(request):
     return render(request, 'web/ropanino.html')
 
 def userscrud(request):
-    return render(request, 'web/userscrud.html')
+    users = user.objects.all()
+    data = {
+        'users' : users
+    }
+    return render(request, 'web/userscrud.html', data)
+
+def adduseradmin(request):
+    return render(request, 'web/adduseradmin.html')
+
+def login(request):
+    return render(request, 'web/login.html')
 
     
