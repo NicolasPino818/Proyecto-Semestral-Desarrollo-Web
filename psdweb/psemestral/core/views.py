@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import user
 from .forms import contactForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -37,6 +38,8 @@ def ropanina(request):
 def ropanino(request):
     return render(request, 'web/ropanino.html')
 
+#funciones para el crud
+
 def userscrud(request):
     users = user.objects.all()
     data = {
@@ -44,10 +47,27 @@ def userscrud(request):
     }
     return render(request, 'web/userscrud.html', data)
 
+def eliminar(request, iduser):
+    users = user.objects.get(id=iduser)
+
+    try:
+        user.delete()
+        mensaje = "Eliminado Correctamente"
+        messages.success(mensaje)
+    except:
+        mensaje = "No se puedo eliminar, revisa los datos"
+        messages.error(mensaje)
+
+
+    return redirect('userscrud')
+
+# fin funciones para el crud
+
 def adduseradmin(request):
     return render(request, 'web/adduseradmin.html')
 
 def login(request):
     return render(request, 'web/login.html')
+
 
     

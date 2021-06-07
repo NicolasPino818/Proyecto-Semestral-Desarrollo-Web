@@ -14,7 +14,10 @@ urlpatterns = [
     path("ropamujer/", views.ropamujer , name="ropamujer"),
     path("ropanina/", views.ropanina, name="ropanina"),
     path("ropanino/", views.ropanino, name="ropanino"),
+    #crud
     path("userscrud/", views.userscrud, name="userscrud"),
+    path("eliminar/<iduser>/", views.eliminar, name="eliminar"),
+    #fin creliminarud
     path("adduseradmin/", views.adduseradmin, name="adduseradmin"),
     path("register/", views.register, name="register"),
 ]
