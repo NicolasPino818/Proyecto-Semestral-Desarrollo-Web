@@ -51,14 +51,12 @@ def eliminar(request, iduser):
     users = user.objects.get(id=iduser)
 
     try:
-        user.delete()
-        mensaje = "Eliminado Correctamente"
-        messages.success(mensaje)
+        user.delete(users)
+        print("Eliminado Correctamente")
+        
     except:
-        mensaje = "No se puedo eliminar, revisa los datos"
-        messages.error(mensaje)
-
-
+        print("No se puedo eliminar, revisa los datos")
+        
     return redirect('userscrud')
 
 # fin funciones para el crud
