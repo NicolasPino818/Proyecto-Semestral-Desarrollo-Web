@@ -1,11 +1,21 @@
 from django import forms
-from .models import user, contacto
+from django.contrib.auth.forms import UserCreationForm
+from django.forms import fields
+from .models import user, usercontact
 
 class contactForm(forms.ModelForm):
 
     class Meta : 
-        model = contacto
+        model = usercontact
         #fields = ["name", "email", "msn"]
         fields = '__all__'
+
+
+class registroUser(UserCreationForm):
+    class Meta : 
+        model = user
+        fields = '__all__'
+        
+
 
         

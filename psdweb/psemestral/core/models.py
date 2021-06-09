@@ -7,13 +7,13 @@ class user(models.Model):
     
     nom = models.CharField( max_length=50)
     snom = models.CharField( max_length=50)
-    email = models.EmailField( max_length=254)
+    email = models.EmailField(('email address'), unique=True)
     password = models.CharField( max_length=50)
 
     def __str__(self):
         return self.email
 
-class contacto(models.Model):
+class usercontact(models.Model):
 
     name = models.CharField( max_length=50)
     email = models.CharField( max_length=200)

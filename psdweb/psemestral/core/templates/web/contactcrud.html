@@ -8,28 +8,24 @@
       <br>
           <table class="table table-striped custab">
             <thead>
-            <a href="{% url 'adduseradmin' %}" class="btn btn-primary btn-xs pull-right">Add User<b>+</b> </a>
-            <br>
                 <tr>
                 <br>
                     <th>ID</th>
                     <th>name</th>
-                    <th>last name</th>
                     <th>e-mail</th>
-                    <th>pass</th>
+                    <th>msn</th>
                     <th class="text-center">Action</th>
                 </tr>
             </thead>
-            {% for u in users %}
+            {% for c in ucontacts %}
             <tr>
-              <td>{{ u.id | title}}</td>
-              <td>{{ u.nom | title}}</td>
-              <td>{{ u.snom | title}}</td>
-              <td>{{ u.email | title}}</td>
-              <td>{{ u.password | title}}</td>
+              <td>{{ c.id | title}}</td>
+              <td>{{ c.name | title}}</td>
+              <td>{{ c.email | title}}</td>
+              <td>{{ c.msn | title}}</td>
               <td class="text-center">
               <a href="#" class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span> Edit</a> 
-              <a href="{% url 'eliminar' u.id%}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a> </td>
+              <a href="{% url 'lcontdel' c.id%}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a> </td>
             </tr>
             {% endfor %}
           </table>

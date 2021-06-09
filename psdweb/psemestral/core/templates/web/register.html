@@ -1,17 +1,56 @@
 {% extends 'web/base.html' %}
 {% load static %}
 {% block contenido %}
-
+{% csrf_token %}
+    <br>
     <div class="container">
-       
-        <form class="formulario_usuario" action="#">
-            
-            {{ registroForm }}
+        <div class="panel panel-default">
+            <h3 class="panel-title">Registro</h3>   
+            <form role="form">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            {{ reguform.nom }}
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                        {{ reguform.snom }}
+                        </div>
+                    </div>
+                </div>
 
-            <input type="submit" value="Registrarse" class = "button">
-            
-        </form>
-       
+                <div class="form-group">
+                    {{ reguform.email }}
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            {{ reguform.pasword }}
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                </div>
+        
+                <input type="submit" value="Register" class="btn btn-info btn-block"> 
+            </form>           
+        </div>
     </div>
+    <br>
 
+    <div
+        {% if messages %}
+        {% for m in messages %}
+
+            <div> {{m}} </div>
+
+        {% endfor %}
+        {% endif %}
+    </div>
+    <br>
 {% endblock contenido %}

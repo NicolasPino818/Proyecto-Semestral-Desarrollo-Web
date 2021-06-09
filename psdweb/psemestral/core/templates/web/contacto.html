@@ -12,7 +12,8 @@
     <!--espaciador-->
 
     <!--Form-->
-    <form name="formulario_contacto" id="formulario_contacto" method="POST">
+    <form action="" name="formulario_contacto" id="formulario_contacto" method="POST">
+      {% csrf_token %}
       <div class="container-fluid text-center my-pb-120 my-pt-120 my-fondo-formulario-contacto">
         <div class="container">
           <div class="row my-white-tp-bg">
@@ -32,17 +33,17 @@
               <div>
                 <div class="form-group my-text-left">
                   <label for="nombre">Nombre</label>
-                  <input type="text" name="nombre_contacto" id="nombre_contacto" placeholder="Ej: Marcos Parra" class="form-control">
+                  {{ cform.name }} 
                   <p class="error_nombre_c" id="error_nombre_c">Este campo no puede contener numeros ni simbolos, el texto no puede superar los 16 caracteres ni tener menos de 4</p>
                 </div>
                 <div class="form-group my-text-left">
                   <label for="email">Email</label>
-                  <input type="email" name="email_contacto" id="email_contacto" placeholder="ejemplo@correo.com" class="form-control">
+                  {{ cform.email }}
                   <p class="error_email_c" id="error_email_c">este campo debe tener una estructura de correo valido: ejemplo@correo.com</p>
                 </div>
                 <div class="form-group my-text-left">
                   <label for="mensaje_contacto">Mensaje</label>
-                  <textarea class="form-control" name="mensaje_contacto" id="mensaje_contacto" placeholder="Tu Mensaje" rows="7"></textarea>
+                  {{ cform.msn }}
                 </div>
                 <div class="form-group">
                   <input type="submit" class="btn btn-primary btn block w-100" value="Enviar">
@@ -53,6 +54,17 @@
         </div>
       </div>
   </form>
+  <br>
+  <div
+    {% if messages %}
+      {% for m in messages %}
+
+        <div> {{m}} </div>
+
+      {% endfor %}
+    {% endif %}
+  </div>
+  <br>
     <!--espaciador-->
     <div class="container my-pt-60 my-pb-60"></div>
     <!--espaciador-->
