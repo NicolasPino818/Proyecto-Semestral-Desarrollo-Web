@@ -11,7 +11,7 @@ class contactForm(forms.ModelForm):
         fields = '__all__'
 
 
-class registroUser(UserCreationForm):
+class registroUser(forms.ModelForm):
     class Meta : 
         model = user
         fields = '__all__'

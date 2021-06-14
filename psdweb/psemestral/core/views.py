@@ -9,7 +9,7 @@ from django.contrib import messages
 def index(request):
     return render(request, 'web/index.html')
 
-
+#nom
 # funciones para el coontacto
 def contacto(request): #agregar
 
@@ -97,30 +97,29 @@ def eliminar(request, iduser): #eliminar
         messages.success(request, mensaje)
         
     except:
-        print("No se puedo eliminar, revisa los datos")
+        print('No se puedo eliminar, revisa los datos')
         mensaje = "No se puedo eliminar, revisa los datos"
         messages.error(request, mensaje)
         
     return redirect('userscrud')
 
-def registro(request):
+def registro(request): #registro
 
     reguser = registroUser()
     data = {'reguform' : reguser}
-    
+    #registroUser++ reguser.nom + reguser.snom + reguser.email
     if request.method == 'POST':
-        reguser = contactForm(data = request.POST) 
+        reguser = registroUser(data = request.POST) 
         if reguser.is_valid():
             reguser.save()
-            return redirect('register')
+            print("Usuario Creado Correctamente")
+            mensaje = "Usuario Creado Correctamente"
+            messages.success(request, mensaje)
+            return redirect('index')
         else:
-            data["reguform"] = reguser;
-        
-        print("Usuario Creado Correctamente")
-        mensaje = "Usuario Creado Correctamente"
-        messages.success(request, mensaje)
+            data["reguform"] = reguser;  
     else:
-        print("No se puedo crear el usuario, revisa los datos")
+        print("No se puedo crear el usuario, revisa los datos"+ reguser.nom + reguser.snom + reguser.email)
         mensaje = "No se puedo crear el usuario, revisa los datos"
         messages.error(request, mensaje)
 
