@@ -107,7 +107,6 @@ def registro(request): #registro
 
     reguser = registroUser()
     data = {'reguform' : reguser}
-    #registroUser++ reguser.nom + reguser.snom + reguser.email
     if request.method == 'POST':
         reguser = registroUser(data = request.POST) 
         if reguser.is_valid():
@@ -119,7 +118,7 @@ def registro(request): #registro
         else:
             data["reguform"] = reguser;  
     else:
-        print("No se puedo crear el usuario, revisa los datos"+ reguser.nom + reguser.snom + reguser.email)
+        print("No se puedo crear el usuario, revisa los datos")
         mensaje = "No se puedo crear el usuario, revisa los datos"
         messages.error(request, mensaje)
 
@@ -127,8 +126,41 @@ def registro(request): #registro
 
 # fin funciones para el crud
 
-def adduseradmin(request):
-    return render(request, 'web/adduseradmin.html')
+def adduseradmin(request): #registro de usuario para un administrador
+    reguser = registroUser()
+    data = {'addform' : reguser}
+    if request.method == 'POST':
+        reguser = registroUser(data = request.POST) 
+        if reguser.is_valid():
+            reguser.save()
+            print("Usuario Creado Correctamente")
+            mensaje = "Usuario Creado Correctamente"
+            messages.success(request, mensaje)
+            return redirect('userscrud')
+        else:
+            data["addform"] = reguser;  
+    else:
+        print("No se puedo crear el usuario, revisa los datos")
+        mensaje = "No se puedo crear el usuario, revisa los datos"
+        messages.error(request, mensaje)
+    return render(request, 'web/adduseradmin.html', data)
+
+def edituser(request, iduser): #editar usuario desde un administrador
+    euser = user.objects.get(id=iduser)
+    data = {
+    'form': registroUser(instance=euser) 
+    }
+    if request.method == 'POST':
+        formulario_edit = registroUser(data=request.POST, instance=euser)
+        if formulario_edit.is_valid:
+            formulario_edit.save()
+            data['mensaje'] = "usuario editado correctamente"
+            return redirect('userscrud')
+        else:
+            data["fomr"] = formulario_edit;  
+    return render(request, 'web/edituser.html', data)
+
+
 
 def login(request):
     return render(request, 'web/login.html')

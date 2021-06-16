@@ -15,6 +15,11 @@ class registroUser(forms.ModelForm):
     class Meta : 
         model = user
         fields = '__all__'
+
+#class addUserA(forms.ModelForm):
+ #   class Meta : 
+  #      model = user
+   #     fields = '__all__'
         
 
 
