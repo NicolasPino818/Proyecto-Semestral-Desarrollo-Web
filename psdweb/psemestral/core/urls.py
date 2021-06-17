@@ -25,5 +25,4 @@ urlpatterns = [
     #fin creliminarud
     path("adduseradmin/", views.adduseradmin, name="adduseradmin"),
     path("edituser/<iduser>", views.edituser, name="edituser"),
-    #path("register/", views.register, name="register"),
 ]

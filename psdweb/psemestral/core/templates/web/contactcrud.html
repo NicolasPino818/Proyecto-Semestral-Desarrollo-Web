@@ -3,8 +3,13 @@
 {% block contenido %}
     <!-- TABLAS PARA EL CRUD -->
     <br>
+    
     <br>
     <div class="container">
+      <br>
+      {%  include 'web/status.html' %}
+      <br>
+      <a href="{% url 'userscrud' %}" class="btn btn-success btn-xs pull-right">See users acount<b></b> </a>
       <br>
           <table class="table table-striped custab">
             <thead>
@@ -24,10 +29,11 @@
               <td>{{ c.email | title}}</td>
               <td>{{ c.msn | title}}</td>
               <td class="text-center">
-              <a href="#" class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+              
               <a href="{% url 'lcontdel' c.id%}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a> </td>
             </tr>
             {% endfor %}
+            
           </table>
         <br>
         <div

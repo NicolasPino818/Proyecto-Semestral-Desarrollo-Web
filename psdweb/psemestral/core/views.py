@@ -9,7 +9,7 @@ from django.contrib import messages
 def index(request):
     return render(request, 'web/index.html')
 
-#nom
+
 # funciones para el coontacto
 def contacto(request): #agregar
 
@@ -35,8 +35,11 @@ def contacto(request): #agregar
 
 def contactcrud(request): #listar
     contacts = usercontact.objects.all()
+    users = user.objects.all()
+    numusers = users.count()
+    numcontacts = contacts.count()
     data = {
-        'ucontacts' : contacts
+        'ucontacts' : contacts, 'nusers' : numusers, 'ncontacts' : numcontacts
     }
     return render(request, 'web/contactcrud.html', data)
 
@@ -55,7 +58,8 @@ def lcontdel(request, iduserc): #eliminar
         messages.error(request, mensaje)
         
     return redirect('contactcrud')
-    
+
+# End funciones para el coontacto
 
 def modelo(request):
     return render(request, 'web/modelo.html')
@@ -78,32 +82,9 @@ def ropanina(request):
 def ropanino(request):
     return render(request, 'web/ropanino.html')
 
-#funciones para el crud
+#login and register by user
 
-def userscrud(request): #listar
-    users = user.objects.all()
-    data = {
-        'users' : users
-    }
-    return render(request, 'web/userscrud.html', data)
-
-def eliminar(request, iduser): #eliminar
-    users = user.objects.get(id=iduser)
-
-    try:
-        user.delete(users)
-        print("Eliminado Correctamente")
-        mensaje = "Eliminado Correctamente"
-        messages.success(request, mensaje)
-        
-    except:
-        print('No se puedo eliminar, revisa los datos')
-        mensaje = "No se puedo eliminar, revisa los datos"
-        messages.error(request, mensaje)
-        
-    return redirect('userscrud')
-
-def registro(request): #registro
+def registro(request): #registro user
 
     reguser = registroUser()
     data = {'reguform' : reguser}
@@ -124,7 +105,14 @@ def registro(request): #registro
 
     return render(request, 'web/register.html', data)
 
-# fin funciones para el crud
+def login(request):
+    return render(request, 'web/login.html')
+    
+
+
+# End login and register by user
+
+#funciones para el crud
 
 def adduseradmin(request): #registro de usuario para un administrador
     reguser = registroUser()
@@ -160,10 +148,40 @@ def edituser(request, iduser): #editar usuario desde un administrador
             data["fomr"] = formulario_edit;  
     return render(request, 'web/edituser.html', data)
 
+def eliminar(request, iduser): #eliminar usuario desde un adminw
+    users = user.objects.get(id=iduser)
+
+    try:
+        user.delete(users)
+        print("Eliminado Correctamente")
+        mensaje = "Eliminado Correctamente"
+        messages.success(request, mensaje)
+        
+    except:
+        print('No se puedo eliminar, revisa los datos')
+        mensaje = "No se puedo eliminar, revisa los datos"
+        messages.error(request, mensaje)
+        
+    return redirect('userscrud')
 
 
-def login(request):
-    return render(request, 'web/login.html')
+def userscrud(request): #listar
+    users = user.objects.all()
+    contacts = usercontact.objects.all()
+
+    numusers = users.count()
+    numcontacts = contacts.count()
+    data = {
+        'users' : users, 'nusers' : numusers, 'ncontacts' : numcontacts
+    }
+    return render(request, 'web/userscrud.html', data)
+
+# fin funciones para el crud
+
+
+#status
+
+    
 
 
     

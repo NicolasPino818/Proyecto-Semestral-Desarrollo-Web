@@ -2,13 +2,16 @@
 {% load static %}
 {% block contenido %}
     <!-- TABLAS PARA EL CRUD -->
-    <br>
-    <br>
+    
     <div class="container">
+      <br>
+      {%  include 'web/status.html' %}
+      <br>
       <br>
           <table class="table table-striped custab">
             <thead>
             <a href="{% url 'adduseradmin' %}" class="btn btn-primary btn-xs pull-right">Add User<b>+</b> </a>
+            <a href="{% url 'contactcrud' %}" class="btn btn-success btn-xs pull-right">See Contacts msn<b></b> </a>
             <br>
                 <tr>
                 <br>
