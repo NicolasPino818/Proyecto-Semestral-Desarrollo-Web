@@ -1,37 +1,32 @@
 {% extends 'web/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block contenido %}
     <div class="container">
-    <!-- AGREGAR USUARIO DESDE ADMIN -->
+        <!-- AGREGAR USUARIO DESDE ADMIN -->
         <br>
-        <br>
-        <form class="row g-3" method="POST">
+        <form method="POST">
             {% csrf_token %}
-            <div class="col-md-4">
+            <div >
                 <label for="validationServer01" class="form-label">First name</label>
-                {{addform.nom}}
-            </div>
-            <div class="col-md-4">
-                <label for="validationServer02" class="form-label">Last name</label>
-                {{addform.snom}}
-                
-              
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label for="validationServerUsername" class="form-label">E-mail</label>
-                
-                {{addform.email}}
-                
-            </div>
-            <div class="col-md-6">
-                <label for="validationServer03" class="form-label">Password</label>
-                {{addform.password}}
-                
-            </div>
+                {{addform.nom | as_crispy_field:"bootstrap"}}
             
+            
+                <label for="validationServer02" class="form-label">Last name</label>
+                {{addform.snom | as_crispy_field:"bootstrap"}}
+            
+            
+                <label for="validationServerUsername" class="form-label">E-mail</label>
+                {{addform.email | as_crispy_field:"bootstrap"}}
+                
+                <label for="validationServer03" class="form-label">Password</label>
+                {{addform.password | as_crispy_field:"bootstrap"}}
+                
+            </div>
+            <br>
             <div class="col-12">
                 <button class="btn btn-primary" type="submit">Submit form</button>
+                <a href="{% url 'userscrud' %}" class="btn btn-danger btn-xs pull-right">Volver</a>
             </div>
         </form>
         <!-- FIN AGREGAR USUARIO DESDE ADMIN -->

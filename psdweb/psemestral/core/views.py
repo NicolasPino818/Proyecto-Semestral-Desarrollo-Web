@@ -1,7 +1,7 @@
 from django.http.request import HttpRequest
 from django.shortcuts import render, redirect
-from .models import user, usercontact
-from .forms import contactForm, registroUser
+from .models import user, usercontact 
+from .forms import contactForm, registroUser, addProduct
 from django.contrib import messages
 
 # Create your views here.
@@ -67,8 +67,30 @@ def modelo(request):
 def nosotros(request):
     return render(request, 'web/nosotros.html')
 
-def productos(request):
-    return render(request, 'web/productos.html')
+def addproducto(request):
+    
+    product = addProduct()
+    data = {'proForm' : product}
+    if request.method == 'POST':
+        product = registroUser(data = request.POST) 
+        if product.is_valid():
+            product.save()
+            print("producto Creado Correctamente")
+            mensaje = "producto Creado Correctamente"
+            messages.success(request, mensaje)
+            return redirect('producto')
+        else:
+            data["reguform"] = product;  
+    else:
+        print("No se puedo crear el producto, revisa los datos")
+        mensaje = "No se puedo crear el producto, revisa los datos"
+        messages.error(request, mensaje)
+
+    return render(request, 'web/addproducto.html', data)
+
+
+def stock(request):
+    return render(request, 'web/stock.html')    
 
 def ropahombre(request):
     return render(request, 'web/ropahombre.html')

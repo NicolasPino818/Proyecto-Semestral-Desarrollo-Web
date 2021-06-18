@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import fields
-from .models import user, usercontact
+from .models import user, usercontact, newProduct
 
 class contactForm(forms.ModelForm):
 
@@ -16,10 +16,10 @@ class registroUser(forms.ModelForm):
         model = user
         fields = '__all__'
 
-#class addUserA(forms.ModelForm):
- #   class Meta : 
-  #      model = user
-   #     fields = '__all__'
+class addProduct(forms.ModelForm):
+    class Meta : 
+        model = newProduct
+        fields = '__all__'
         
 
 

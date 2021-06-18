@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import user, usercontact
+from .models import newProduct, user, usercontact
 # Register your models here.
 
 
@@ -12,6 +12,11 @@ class userscontact(admin.ModelAdmin):
     list_display = ["name", "email", "msn"]
     search_fields = ["nom"]
 
+class adminproducts(admin.ModelAdmin):
+    list_display = ["name", "type", "gender", "size", "brand", "price", "img"]
+    search_fields = ["brand"]
+
 
 admin.site.register(user, useredit)
 admin.site.register(usercontact, userscontact)
+admin.site.register(newProduct, adminproducts)

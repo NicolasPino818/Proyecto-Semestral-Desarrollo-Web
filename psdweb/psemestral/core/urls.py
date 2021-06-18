@@ -11,9 +11,12 @@ urlpatterns = [
     path("lcontdel/<iduserc>/", views.lcontdel , name="lcontdel"), #eliminar
     # fin contacto mensaje
     path("login/", views.login, name="login"),
+    path("stock/", views.stock, name="stock"),
     path("modelo/", views.modelo, name="modelo"),
     path("nosotros/", views.nosotros , name="nosotros"),
-    path("productos/", views.productos, name="productos"),
+    #addproducto
+    path("addproducto/", views.addproducto, name="addproducto"),
+
     path("ropahombre/", views.ropahombre, name="ropahombre"),
     path("ropamujer/", views.ropamujer , name="ropamujer"),
     path("ropanina/", views.ropanina, name="ropanina"),
