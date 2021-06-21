@@ -14,9 +14,13 @@ urlpatterns = [
     path("stock/", views.stock, name="stock"),
     path("modelo/", views.modelo, name="modelo"),
     path("nosotros/", views.nosotros , name="nosotros"),
-    #addproducto
-    path("addproducto/", views.addproducto, name="addproducto"),
+    #producto
+    path("addproducto/", views.addproducto, name='addproducto'), #agregar
+    path("productcrud/", views.productcrud, name='productcrud'), #listar
+    path("deleteproduct/<idproduct>/", views.deleteproduct, name="deleteproduct"), #eliminar
+    path("editproduct/<idproduct>", views.editproduct, name="editproduct"), ##editar
 
+    path("productos/", views.productos, name='productos'),
     path("ropahombre/", views.ropahombre, name="ropahombre"),
     path("ropamujer/", views.ropamujer , name="ropamujer"),
     path("ropanina/", views.ropanina, name="ropanina"),

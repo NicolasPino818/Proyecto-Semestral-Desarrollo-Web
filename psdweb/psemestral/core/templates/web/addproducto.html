@@ -11,7 +11,7 @@
     <div  class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6 pb-5">
-                <form action="" method="post">
+                <form method="POST">
                     {% csrf_token %}
                     <div class="card border-primary rounded-0">
                         <div class="card-header p-0">
@@ -87,7 +87,8 @@
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-primary" type="submit">Submit form</button>
+                                <button class="btn btn-primary" type="submit">add product</button>
+                                <a href="{% url 'productcrud' %}" class="btn btn-success btn-xs pull-right">See all products<b></b> </a>
                             </div>
                         </div>
 
@@ -96,6 +97,16 @@
 
             </div>
         </div>
+        <div
+            {% if messages %}
+            {% for m in messages %}
+
+                <div> {{m}} </div>
+
+            {% endfor %}
+            {% endif %}
+        </div>
+    <br>
     </div>
 
 

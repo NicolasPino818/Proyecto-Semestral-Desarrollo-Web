@@ -1,0 +1,87 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block contenido %}
+    <br>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                    <h3 class="panel-title">Product edit <small>by ReplyModa</small></h3>
+                    </div>
+                    <div class="panel-body">
+                    
+                    <form role="form" method="POST">
+                        {% csrf_token %}
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label for="gender">gender</label>
+                                         {{form.gender }} 
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <label for="modelo">modelo</label>
+                                         {{form.name }}  
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="size">size</label>
+                                 {{form.size }} 
+                            </div>
+
+                            <div class="row">
+                                <label for="type">type</label>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                          {{form.type }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="brand">brand</label>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                          {{form.brand }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="price">price</label>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                          {{form.price }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label for="img">img</label>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                          {{form.img }}
+                                    </div>
+                                </div>
+                            </div>
+              
+                        
+                        <input type="submit" value="Register" class="btn btn-info btn-block">
+                    
+                    </form>
+                </div>
+            </div>
+    </div>
+    <br>
+
+    <div
+        {% if messages %}
+        {% for m in messages %}
+
+            <div> {{m}} </div>
+
+        {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+{% endblock contenido %}form
