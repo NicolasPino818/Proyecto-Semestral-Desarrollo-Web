@@ -28,8 +28,8 @@ def contacto(request): #agregar
         messages.success(request, mensaje)
     else:
         print("No se puedo enviar el mensaje, revisa los datos")
-        mensaje = "No se puedo enviar el mensaje, revisa los datos"
-        messages.error(request, mensaje)
+        #mensaje = "No se puedo enviar el mensaje, revisa los datos"
+        #messages.error(request, mensaje)
 
     return render(request, 'web/contacto.html', data)
 
