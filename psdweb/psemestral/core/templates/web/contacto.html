@@ -1,5 +1,6 @@
 {% extends 'web/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block contenido %}
 
     <!--Banner-->
@@ -33,17 +34,17 @@
               <div>
                 <div class="form-group my-text-left">
                   <label for="nombre">Nombre</label>
-                  {{ cform.name }} 
+                  {{ cform.name  | as_crispy_field:"bootstrap"}} 
                   <p class="error_nombre_c" id="error_nombre_c">Este campo no puede contener numeros ni simbolos, el texto no puede superar los 16 caracteres ni tener menos de 4</p>
                 </div>
                 <div class="form-group my-text-left">
                   <label for="email">Email</label>
-                  {{ cform.email }}
+                  {{ cform.email  | as_crispy_field:"bootstrap"}}
                   <p class="error_email_c" id="error_email_c">este campo debe tener una estructura de correo valido: ejemplo@correo.com</p>
                 </div>
                 <div class="form-group my-text-left">
                   <label for="mensaje_contacto">Mensaje</label>
-                  {{ cform.msn }}
+                  {{ cform.msn  | as_crispy_field:"bootstrap"}}
                 </div>
                 <div class="form-group">
                   <input type="submit" class="btn btn-primary btn block w-100" value="Enviar">

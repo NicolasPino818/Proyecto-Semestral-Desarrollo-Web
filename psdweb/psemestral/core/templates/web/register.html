@@ -1,6 +1,8 @@
 {% extends 'web/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block contenido %}
+
     <br>
     <div class="container">
         <div class="panel panel-default">
@@ -15,27 +17,27 @@
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <label for="NOMBRE">NOMBRE</label>
-                                         {{reguform.nom}} 
+                                        {{ reguform.nom | as_crispy_field:"bootstrap" }} 
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <label for="SEGUNDO NOMBRE">SEGUNDO NOMBRE</label>
-                                         {{reguform.snom}}  
+                                         {{reguform.snom | as_crispy_field:"bootstrap"}}  
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="E-MAIL">E-MAIL</label>
-                                 {{reguform.email}} 
+                                 {{reguform.email | as_crispy_field:"bootstrap"}} 
                             </div>
 
                             <div class="row">
                                 <label for="contraseña">contraseña</label>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                          {{reguform.password}}
+                                          {{reguform.password | as_crispy_field:"bootstrap"}}
                                     </div>
                                 </div>
                             </div>
