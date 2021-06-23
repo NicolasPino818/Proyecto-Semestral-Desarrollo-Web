@@ -3,7 +3,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     #contacto mensaje
     path("contacto/", views.contacto , name="contacto"), #agregar
@@ -30,6 +29,5 @@ urlpatterns = [
     path("eliminar/<iduser>/", views.eliminar, name="eliminar"), #eliminar
     path("register/", views.registro, name="register"), #registrar
     #fin creliminarud
-    path("adduseradmin/", views.adduseradmin, name="adduseradmin"),
     path("edituser/<iduser>", views.edituser, name="edituser"),
 ]

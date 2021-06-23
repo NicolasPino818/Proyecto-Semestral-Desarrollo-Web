@@ -1,6 +1,8 @@
 {% extends 'web/base.html' %}
 {% load static %}
-{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+{% bootstrap_css %} 
+{% load widget_tweaks %}
 {% block contenido %}
     <br>
     <div class="container">
@@ -16,32 +18,28 @@
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <label for="NOMBRE">NOMBRE</label>
-                                         {{form.nom | as_crispy_field:"bootstrap"}} 
+                                         {{form.nom |add_class:"form-control"}} 
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <label for="SEGUNDO NOMBRE">SEGUNDO NOMBRE</label>
-                                         {{form.snom | as_crispy_field:"bootstrap"}}  
+                                        <label for="SEGUNDO NOMBRE">APELLIDO</label>
+                                         {{form.snom |add_class:"form-control"}}  
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="E-MAIL">E-MAIL</label>
-                                 {{form.email | as_crispy_field:"bootstrap"}} 
-                            </div>
-
-                            <div class="row">
-                                <label for="contraseña">contraseña</label>
-                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                 {{form.email |add_class:"form-control"}}
+                                 <label for="contraseña">contraseña</label>
+                                <div class="CENTER">
                                     <div class="form-group">
-                                          {{form.password | as_crispy_field:"bootstrap"}}
+                                          {{form.password |add_class:"form-control"}}
                                     </div>
                                 </div>
                             </div>
-              
-                        
+               
                         <input type="submit" value="Register" class="btn btn-info btn-block">
                     
                     </form>

@@ -36,10 +36,12 @@ def contacto(request): #agregar
 def contactcrud(request): #listar
     contacts = usercontact.objects.all()
     users = user.objects.all()
+    products = newProduct.objects.all()
+    numproducts = products.count()
     numusers = users.count()
     numcontacts = contacts.count()
     data = {
-        'ucontacts' : contacts, 'nusers' : numusers, 'ncontacts' : numcontacts
+        'ucontacts' : contacts, 'nusers' : numusers, 'ncontacts' : numcontacts, 'nproducts' : numproducts
     }
     return render(request, 'web/contactcrud.html', data)
 
@@ -67,27 +69,39 @@ def modelo(request):
 def nosotros(request):
     return render(request, 'web/nosotros.html')
 
-def addproducto(request):
-    product = addProduct()
-    data = {'proForm' : product}
+# CRUD Producto
+
+def stock(request): #listar producto en crud
+    product = newProduct.objects.all()
+
+    data = {
+        'product' : product
+    }
+    return render(request, 'web/stock.html', data)
+
+
+def addproducto(request): #AGREGAR PRODUCTO
+    
+    data = {'proForm' : addProduct()}
     if request.method == 'POST':
         product = addProduct(data = request.POST) 
         if product.is_valid():
             product.save()
             print("producto Creado Correctamente")
+            data['message'] = "Producto agregado y guardado correctamente"
             mensaje = "producto Creado Correctamente"
             messages.success(request, mensaje)
             return redirect('addproducto')
         else:
             data["proForm"] = product;  
     else:
-        print("No se puedo crear el producto, revisa los datos" + product.gender)
+        print("No se puedo crear el producto, revisa los datos")
+        data['message'] = "Producto NO agregado"
         mensaje = "No se puedo crear el producto, revisa los datos"
         messages.error(request, mensaje)
-    
     return render(request, 'web/addproducto.html', data)
 
-def productcrud(request): #listar producto
+def productcrud(request): #listar producto en crud
     users = user.objects.all()
     contacts = usercontact.objects.all()
     products = newProduct.objects.all()
@@ -152,7 +166,7 @@ def ropanino(request):
     return render(request, 'web/ropanino.html')
 
 #login and register by user
-
+#stock
 def registro(request): #registro user
 
     reguser = registroUser()
@@ -182,25 +196,6 @@ def login(request):
 # End login and register by user
 
 #funciones para el crud
-
-def adduseradmin(request): #registro de usuario para un administrador
-    reguser = registroUser()
-    data = {'addform' : reguser}
-    if request.method == 'POST':
-        reguser = registroUser(data = request.POST) 
-        if reguser.is_valid():
-            reguser.save()
-            print("Usuario Creado Correctamente")
-            mensaje = "Usuario Creado Correctamente"
-            messages.success(request, mensaje)
-            return redirect('userscrud')
-        else:
-            data["addform"] = reguser;  
-    else:
-        print("No se puedo crear el usuario, revisa los datos")
-        mensaje = "No se puedo crear el usuario, revisa los datos"
-        messages.error(request, mensaje)
-    return render(request, 'web/adduseradmin.html', data)
 
 def edituser(request, iduser): #editar usuario desde un administrador
     euser = user.objects.get(id=iduser)
@@ -237,11 +232,12 @@ def eliminar(request, iduser): #eliminar usuario desde un adminw
 def userscrud(request): #listar
     users = user.objects.all()
     contacts = usercontact.objects.all()
-
+    products = newProduct.objects.all()
+    numproducts = products.count()
     numusers = users.count()
     numcontacts = contacts.count()
     data = {
-        'users' : users, 'nusers' : numusers, 'ncontacts' : numcontacts
+        'users' : users, 'nusers' : numusers, 'ncontacts' : numcontacts, 'nproducts' : numproducts
     }
     return render(request, 'web/userscrud.html', data)
 

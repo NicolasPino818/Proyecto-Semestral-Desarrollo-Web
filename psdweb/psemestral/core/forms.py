@@ -9,12 +9,23 @@ class contactForm(forms.ModelForm):
         model = usercontact
         #fields = ["name", "email", "msn"]
         fields = '__all__'
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Nombre'}),
+            'email': forms.TextInput(attrs={'placeholder': 'E-mail'}),
+            'msn': forms.TextInput(attrs={'placeholder': 'Mensaje'}),
+        }
 
 
 class registroUser(forms.ModelForm):
     class Meta : 
         model = user
         fields = '__all__'
+        widgets = {
+            'nom': forms.TextInput(attrs={'placeholder': 'Nombre'}),
+            'snom': forms.TextInput(attrs={'placeholder': 'Apellido'}),
+            'email': forms.TextInput(attrs={'placeholder': 'E-mail'}),
+            'password': forms.TextInput(attrs={'placeholder': 'Contraseña'}),
+        }
 
 class addProduct(forms.ModelForm):
     class Meta : 
