@@ -55,7 +55,7 @@ class newProduct(models.Model):
     type = models.IntegerField(choices = typeProduct)
     brand = models.IntegerField(choices = brands)
     price = models.IntegerField()
-    img = models.ImageField(upload_to='productos', null=True)
+    img = models.ImageField(upload_to='productos', null=True, blank=True)
 
     def __str__(self):
         return self.name

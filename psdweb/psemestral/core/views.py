@@ -71,20 +71,26 @@ def nosotros(request):
 
 # CRUD Producto
 
-def stock(request): #listar producto en crud
+def stock(request): #listar producto en stock
     product = newProduct.objects.all()
-
+    
     data = {
         'product' : product
     }
     return render(request, 'web/stock.html', data)
 
-
-def addproducto(request): #AGREGAR PRODUCTO
-    
-    data = {'proForm' : addProduct()}
+'''def addproducto(request): #AGREGAR PRODUCTO
+    req = addProduct()
+    data = {'proForm' : req}
     if request.method == 'POST':
-        product = addProduct(data = request.POST) 
+        product = newProduct()
+        product.gender = req.get(product.gender)
+        product.type = req.type
+        product.size = req.size
+        product.name = req.name
+        product.brand = req.brand
+        product.price = req.price
+        product.img = req.img
         if product.is_valid():
             product.save()
             print("producto Creado Correctamente")
@@ -93,10 +99,30 @@ def addproducto(request): #AGREGAR PRODUCTO
             messages.success(request, mensaje)
             return redirect('addproducto')
         else:
-            data["proForm"] = product;  
+            data["proForm"] = product;
     else:
         print("No se puedo crear el producto, revisa los datos")
         data['message'] = "Producto NO agregado"
+        mensaje = "No se puedo crear el producto, revisa los datos"
+        messages.error(request, mensaje)        
+
+    return render(request, 'web/addproducto.html', data)
+'''
+def addproducto(request): #AGREGAR PRODUCTO
+    product = addProduct()
+    data = {'proForm' : product}
+    if request.method == 'POST':
+        product = addProduct(request.POST, files = request.FILES) 
+        if product.is_valid():
+            product.save()
+            print("producto Creado Correctamente")
+            mensaje = "producto Creado Correctamente"
+            messages.success(request, mensaje)
+            return redirect('index')
+        else:
+            data["proForm"] = product;  
+    else:
+        print("No se puedo crear el producto, revisa los datos")
         mensaje = "No se puedo crear el producto, revisa los datos"
         messages.error(request, mensaje)
     return render(request, 'web/addproducto.html', data)
@@ -120,13 +146,13 @@ def editproduct(request, idproduct): #editar producto desde un administrador
     'form': addProduct(instance=eproduct) 
     }
     if request.method == 'POST':
-        formulario_edit = addProduct(data=request.POST, instance=eproduct)
+        formulario_edit = addProduct(data=request.POST, instance=eproduct, files = request.FILES)
         if formulario_edit.is_valid:
             formulario_edit.save()
             data['mensaje'] = "producto editado correctamente"
             return redirect('productcrud')
         else:
-            data["fomr"] = formulario_edit;  
+            data["form"] = formulario_edit(instance=eproduct.object.get(id=idproduct));  
     return render(request, 'web/editproduct.html', data)
 
 def deleteproduct(request, idproduct): #eliminar usuario desde un adminw
@@ -168,7 +194,7 @@ def ropanino(request):
 #login and register by user
 #stock
 def registro(request): #registro user
-
+    
     reguser = registroUser()
     data = {'reguform' : reguser}
     if request.method == 'POST':
@@ -209,7 +235,7 @@ def edituser(request, iduser): #editar usuario desde un administrador
             data['mensaje'] = "usuario editado correctamente"
             return redirect('userscrud')
         else:
-            data["fomr"] = formulario_edit;  
+            data["form"] = formulario_edit;  
     return render(request, 'web/edituser.html', data)
 
 def eliminar(request, iduser): #eliminar usuario desde un adminw
