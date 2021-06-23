@@ -33,14 +33,6 @@
           alt="Imagen de la marca"
         />
       </a>
-      <!--Clima API-->
-    <div class="container">
-      <div class="card">
-        <h1 class="name" id="name"></h1>
-        <p class="temp"></p>
-        <p class="desc"></p>
-      </div>
-    </div>
   <script src="../js/climapi.js"></script>
       <!--Boton Movil-->
 
@@ -133,6 +125,18 @@
     <!--Footer-->
     
     <footer class="bg-dark text-lg-start text-center">
+      <!--Clima API-->
+    <div class="container ">
+      <div class="row justify-content-center">
+        <div class="card">
+          <h1 class="name" id="name"></h1>
+          <p class="temp"></p>
+          <p class="desc"></p>
+        </div>
+      </div>
+      <script src="../../Proyecto-Semestral-Desarrollo-Web/js/climapi.js"></script>
+    </div>
+    
       <div class="container p-4 my-footer-padding">
         <!--Div Fila contenido-->
         <div class="row py-4 d-flex align-items-center">
@@ -189,13 +193,11 @@
                   </li>
                 </ul>
               </div>
+              
               <!--Social-->
               <div class="col-md text-center">
                 <h6 class="text-white text-uppercase font-weight-bold my-pb-10 my-text-font-24">Contacto</h6>
-                <b id="gmap">  Google Maps. </b>
-            <div id="map"></div>
-              <script src="../js/maps.js"></script>
-              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+                
                 <p class="text-white my-pb-15 my-pt-15"><b>Dirección:</b><br>
                   Calle El Labrador, 16844, Maipú, Chile <br>
                   <b>Número de contacto:</b><br>
