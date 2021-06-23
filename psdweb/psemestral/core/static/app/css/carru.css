@@ -53,16 +53,16 @@ ul{
 
 
 .our-webcoderskull{
-  background: url("http://www.webcoderskull.com/img/right-sider-banner.png") no-repeat center top / cover;
+  background: url("https://images3.alphacoders.com/100/1001615.jpg") no-repeat center top / cover;
   
 }
 .our-webcoderskull .cnt-block{ 
    float:left; 
    width:100%; 
    background:#fff; 
-   padding:30px 20px; 
+   padding:27px 15px; 
    text-align:center; 
-   border:2px solid #d5d5d5;
+   border:2px solid #1a82d8;
    margin: 0 0 28px;
 }
 .our-webcoderskull .cnt-block figure{
