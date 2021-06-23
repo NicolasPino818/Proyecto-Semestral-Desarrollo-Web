@@ -1,24 +1,66 @@
 {% extends 'web/base.html' %}
 {% load static %}
 {% block contenido %}
-  
-    <!--Contenido-->
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'app/css/carru.css' %}">
+        <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    {% endblock css %}
+     
+     
+   
+<!------ Include the above in your HEAD tag ---------->
 
-    <div class="container my-espaciador">
-      <div class="row justify-content-center">
-        <div class="col text-center">
-          <h5 class="my-text-font-50"><b>Nosotros Somos Reply Moda</b></h5>
-          <p class="my-pt-30 my-text-font-24">
-            Somos estudiantes de Ingenieria en informatica y esta es nuestra primera pagina web como modelo <br>
-            <br>
-            <p>Cristobal</p>
-              <p>Brandon</p>
-              <p>Matias</p>
-                <p>Nicolas</p>
-                <p>Cristofer</p>
-          </p>
-        </div>
-      </div>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section class="our-webcoderskull padding-lg">
+  <div class="container">
+    <div class="row heading heading-icon">
+        <h2>Colaboradores</h2>
     </div>
+    <ul class="row">
+      <li class="col-12 col-md 6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 350px;">
+            <figure><img src="{% static 'app/img/Tofer.png' %}" class="img-responsive" alt=""></figure>
+            <h3><a href="https://www.instagram.com/tofercinho/"> Cristofer Pizarro </a></h3>
+            <p>Estudiante de Ingenieria Informatica</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.instagram.com/tofercinho/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+      </li>
+      <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="{% static 'app/img/Brandon.png' %}" class="img-responsive" alt=""></figure>
+            <h3><a href="https://www.instagram.com/brandworkout/">Brandon Sepulveda </a></h3>
+            <p>Estudiante de Ingenieria Informatica</p>
+            <ul class="follow-us clearfix">
+              <li><a href="https://www.instagram.com/brandworkout/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+      </li>
+      <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="{% static 'app/img/Nico.jpeg' %}" class="img-responsive" alt=""></figure>
+            <h3><a href="https://www.instagram.com/sopaipleto1/">Nicolas Pino </a></h3>
+            <p>Estudiante de Ingenieria Informatica</p>
+            <ul class="follow-us clearfix">
+              <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+       </li>
+      <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <figure><img src="{% static 'app/img/Mati.jpg' %}" class="img-responsive" alt=""></figure>
+            <h3><a href="https://www.instagram.com/_m.a.t.i.u_/">Matias Navarro </a></h3>
+            <p>Estudiante de Ingenieria Informatica</p>
+            <ul class="follow-us clearfix">
+              <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+      </li>
+    </ul>
+  </div>
+</section>
 
 {% endblock contenido %}
