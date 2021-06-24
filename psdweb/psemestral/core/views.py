@@ -150,16 +150,32 @@ def stock(request):
     return render(request, 'web/stock.html')    
 
 def ropahombre(request):
-    return render(request, 'web/ropahombre.html')
+    products = newProduct.objects.all()
+    data = {
+        'product' : products
+    }
+    return render(request, 'web/ropahombre.html', data)
 
 def ropamujer(request):
-    return render(request, 'web/ropamujer.html')
+    products = newProduct.objects.all()
+    data = {
+        'product' : products
+    }
+    return render(request, 'web/ropamujer.html', data)
 
 def ropanina(request):
-    return render(request, 'web/ropanina.html')
+    products = newProduct.objects.all()
+    data = {
+        'product' : products
+    }
+    return render(request, 'web/ropanina.html', data)
 
 def ropanino(request):
-    return render(request, 'web/ropanino.html')
+    products = newProduct.objects.all()
+    data = {
+        'product' : products
+    }
+    return render(request, 'web/ropanino.html', data)
 
 def menus(request):
     return render(request, 'web/menus.html')

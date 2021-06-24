@@ -3,35 +3,38 @@
 {% block contenido %}
 
 
-    <!--contenido-->
-
-    <div class="container my-espaciador">
-      <div class="row">
-        <div class="col-md my-mg-4">
-          <a href="#"><img src="{% static 'app/img/881485332_1.jpg' %}" alt="" class="d-block w-100"></a>
+  {% block css %}
+        <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'app/css/shop.css' %}">
+    {% endblock css %}
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {%load humanize%}
+    <section class="our-webcoderskull padding-lg">
+    <div class="container">
+        <div class="row heading heading-icon">
+            <h2>Tienda</h2>
         </div>
-        <div class="col-md my-mg-4">
-          <a href="#"><img src="{% static 'app/img/Productos/Nino/881762261_1.jpg'%}"  alt="" class="d-block w-100"></a>
-        </div>
-        <div class="col-md my-mg-4">
-          <a href="#"><img src="{% static 'app/img/Productos/Nino/881762268_1.jpg' %}" alt="" class="d-block w-100"></a>
-        </div>
-        <div class="col-md my-mg-4">
-          <a href="#"><img src="{% static 'app/img/Productos/Nino/881823494_1.jpg' %}" alt="" class="d-block w-100"></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md my-mg-4">
-          <a href="#"><img src="{% static 'app/img/Productos/Nino/881827163_1.jpg' %}" alt="" class="d-block w-100"></a>
-        </div>
-        <div class="col-md my-mg-4">
-          <a href="#"><img src="{% static 'app/img/Productos/Nino/881827177_1.jpg' %}" alt="" class="d-block w-100"></a>
-        </div>
-        <div class="col-md my-mg-4"></div>
-        <div class="col-md my-mg-4"></div>
-      </div>
+        <ul class="row">
+        {% for p in product %}
+          {%if p.gender == 0%}
+          <li class="col-12 col-md-6 col-lg-3">
+            
+            <div class="cnt-block equal-hight" style="height: 400px;">
+                <p>{{p.type}}</p>
+                <figure><img src="{{p.img.url}}" alt=""></figure>
+                <h3>{{p.name}} - {{p.brand}}</h3>
+                <h2>${{p.price | intcomma}}</h2>
+                <p>{{p.gender}}</p>
+                <p>talla: {{p.size}}</p>
+            </div>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
     </div>
-
+    </section>
 
     
 {% endblock contenido %}

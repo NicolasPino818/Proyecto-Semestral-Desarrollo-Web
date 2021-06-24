@@ -34,8 +34,10 @@ typeProduct = [
     [5, 'zapatillas']
 ]
 genders = [
-    [0, 'male'],
-    [1, 'female']
+    [0, 'male-adult'],
+    [1, 'female-adult'],
+    [2, 'male-boy'],
+    [3, 'female-girl']
 ]
 brands = [
     [0, 'nike'],
