@@ -30,4 +30,7 @@ urlpatterns = [
     path("register/", views.registro, name="register"), #registrar
     #fin creliminarud
     path("edituser/<iduser>", views.edituser, name="edituser"),
+    
+    #MENUS IMPORTANTES
+     path("menus/", views.menus, name="menus"),
 ]

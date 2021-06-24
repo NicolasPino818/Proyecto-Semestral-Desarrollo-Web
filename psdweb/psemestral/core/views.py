@@ -161,6 +161,9 @@ def ropanina(request):
 def ropanino(request):
     return render(request, 'web/ropanino.html')
 
+def menus(request):
+    return render(request, 'web/menus.html')
+
 #login and register by user
 #stock
 def registro(request): #registro user

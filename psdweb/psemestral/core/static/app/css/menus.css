@@ -59,10 +59,10 @@ ul{
 .our-webcoderskull .cnt-block{ 
    float:left; 
    width:100%; 
-   background:rgb(218, 224, 229, 0.7); 
+   background:rgb(222, 226, 230, 0.62); 
    padding:27px 15px; 
    text-align:center; 
-   border:2px solid #274f70;
+   border:2px solid #d1dde7;
    margin: 0 0 28px;
 }
 .our-webcoderskull .cnt-block figure{
@@ -75,7 +75,7 @@ ul{
 .our-webcoderskull .cnt-block img{ 
    width:148px; 
    height:148px; 
-   border-radius:100%; 
+    
 }
 .our-webcoderskull .cnt-block h3{ 
    color:#2a2a2a; 
