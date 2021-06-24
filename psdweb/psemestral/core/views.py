@@ -143,9 +143,6 @@ def deleteproduct(request, idproduct): #eliminar usuario desde un adminw
 
 
 
-def productos(request):
-    return render(request, 'web/productos.html')    
-
 def stock(request):
     return render(request, 'web/stock.html')    
 

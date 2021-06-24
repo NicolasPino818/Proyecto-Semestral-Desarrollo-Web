@@ -19,7 +19,6 @@ urlpatterns = [
     path("editproduct/<idproduct>", views.editproduct, name="editproduct"), ##editar
     path("stockproduct/", views.stockproduct, name="stockproduct"), #stock de productos
 
-    path("productos/", views.productos, name='productos'),
     path("ropahombre/", views.ropahombre, name="ropahombre"),
     path("ropamujer/", views.ropamujer , name="ropamujer"),
     path("ropanina/", views.ropanina, name="ropanina"),
