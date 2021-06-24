@@ -71,43 +71,13 @@ def nosotros(request):
 
 # CRUD Producto
 
-def stock(request): #listar producto en stock
-    product = newProduct.objects.all()
-    
+def stockproduct(request): #listar producto en stock
+    products = newProduct.objects.all()
     data = {
-        'product' : product
+        'product' : products
     }
-    return render(request, 'web/stock.html', data)
+    return render(request, 'web/stockproduct.html', data)
 
-'''def addproducto(request): #AGREGAR PRODUCTO
-    req = addProduct()
-    data = {'proForm' : req}
-    if request.method == 'POST':
-        product = newProduct()
-        product.gender = req.get(product.gender)
-        product.type = req.type
-        product.size = req.size
-        product.name = req.name
-        product.brand = req.brand
-        product.price = req.price
-        product.img = req.img
-        if product.is_valid():
-            product.save()
-            print("producto Creado Correctamente")
-            data['message'] = "Producto agregado y guardado correctamente"
-            mensaje = "producto Creado Correctamente"
-            messages.success(request, mensaje)
-            return redirect('addproducto')
-        else:
-            data["proForm"] = product;
-    else:
-        print("No se puedo crear el producto, revisa los datos")
-        data['message'] = "Producto NO agregado"
-        mensaje = "No se puedo crear el producto, revisa los datos"
-        messages.error(request, mensaje)        
-
-    return render(request, 'web/addproducto.html', data)
-'''
 def addproducto(request): #AGREGAR PRODUCTO
     product = addProduct()
     data = {'proForm' : product}

@@ -10,7 +10,6 @@ urlpatterns = [
     path("lcontdel/<iduserc>/", views.lcontdel , name="lcontdel"), #eliminar
     # fin contacto mensaje
     path("login/", views.login, name="login"),
-    path("stock/", views.stock, name="stock"),
     path("modelo/", views.modelo, name="modelo"),
     path("nosotros/", views.nosotros , name="nosotros"),
     #producto
@@ -18,6 +17,7 @@ urlpatterns = [
     path("productcrud/", views.productcrud, name='productcrud'), #listar
     path("deleteproduct/<idproduct>/", views.deleteproduct, name="deleteproduct"), #eliminar
     path("editproduct/<idproduct>", views.editproduct, name="editproduct"), ##editar
+    path("stockproduct/", views.stockproduct, name="stockproduct"), #stock de productos
 
     path("productos/", views.productos, name='productos'),
     path("ropahombre/", views.ropahombre, name="ropahombre"),
