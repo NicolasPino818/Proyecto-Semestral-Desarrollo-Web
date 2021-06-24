@@ -63,7 +63,13 @@
     {% if messages %}
       {% for m in messages %}
 
-        <div> {{m}} </div>
+        <script>
+          Swal.fire(
+            "title" : "Buen Trabajo!",
+            "text": "{{m}}",
+            "icon": "success"
+          )
+        </script>
 
       {% endfor %}
     {% endif %}

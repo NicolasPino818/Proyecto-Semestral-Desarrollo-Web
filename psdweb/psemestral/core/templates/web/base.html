@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -112,6 +113,8 @@
     {% endblock contenido %}
 
     <!--Footer-->
+
+    
     
     <footer class="bg-dark text-center my-screen-size">
       <div class="container p-4 my-footer-padding">
@@ -197,6 +200,20 @@
 
     </footer>
     <!--No se pone nada abajo de esto-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% if messages %}
+      {% for m in messages %}
+
+        <script>
+          Swal.fire(
+            "title" : "Buen Trabajo!",
+            "text": "{{m}}",
+            "icon": "success"
+          )
+        </script>
+
+      {% endfor %}
+    {% endif %}
     <!--JQuery-->
     <script src="{% static 'app/js/jquery-3.5.1.slim.min.js' %}"></script>
     <!--Popper-->

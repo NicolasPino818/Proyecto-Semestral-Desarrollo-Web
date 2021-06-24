@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-tqe0jefd5ztxm_n3#b@p1j3-5@ysfcx47=)af%!gczkph9igz+
 DEBUG = True
 
 ALLOWED_HOSTS = []
-MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 # Application definition
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'core',
     'colorfield',
     'crispy_forms',
