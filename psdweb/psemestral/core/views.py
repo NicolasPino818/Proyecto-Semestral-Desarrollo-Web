@@ -1,8 +1,11 @@
 from django.http.request import HttpRequest
+from django.http.response import Http404
 from django.shortcuts import render, redirect
 from .models import user, usercontact, newProduct
 from .forms import contactForm, registroUser, addProduct
 from django.contrib import messages
+from django.core.paginator import Paginator
+from django.http import Http404
 
 # Create your views here.
 
@@ -40,8 +43,16 @@ def contactcrud(request): #listar
     numproducts = products.count()
     numusers = users.count()
     numcontacts = contacts.count()
+    page = request.GET.get('page', 1)
+    
+    try:
+        paginator = Paginator(products, 10)
+        products = paginator.page(page)
+    except:
+        raise Http404
     data = {
-        'ucontacts' : contacts, 'nusers' : numusers, 'ncontacts' : numcontacts, 'nproducts' : numproducts
+        'entity' : contacts, 'nusers' : numusers, 'ncontacts' : numcontacts, 'nproducts' : numproducts,
+        'paginator' : paginator
     }
     return render(request, 'web/contactcrud.html', data)
 
@@ -69,12 +80,24 @@ def modelo(request):
 def nosotros(request):
     return render(request, 'web/nosotros.html')
 
+def paginator(request):
+    return render(request, 'web/paginator.html')
+
 # CRUD Producto
 
 def stockproduct(request): #listar producto en stock
     products = newProduct.objects.all()
+    page = request.GET.get('page', 1)
+
+    try:
+        paginator = Paginator(products, 8)
+        products = paginator.page(page)
+    except:
+        raise Http404
     data = {
-        'product' : products
+        'entity' : products,
+        'paginator' : paginator
+
     }
     return render(request, 'web/stockproduct.html', data)
 
@@ -101,12 +124,19 @@ def productcrud(request): #listar producto en crud
     users = user.objects.all()
     contacts = usercontact.objects.all()
     products = newProduct.objects.all()
-
     numusers = users.count()
     numcontacts = contacts.count()
     numproducts = products.count()
+    page = request.GET.get('page', 1)
+    
+    try:
+        paginator = Paginator(products, 4)
+        products = paginator.page(page)
+    except:
+        raise Http404
     data = {
-        'product' : products, 'nusers' : numusers, 'ncontacts' : numcontacts, 'nproducts' : numproducts
+        'entity' : products, 'nusers' : numusers, 'ncontacts' : numcontacts, 'nproducts' : numproducts,
+        'paginator' : paginator
     }
     return render(request, 'web/productcrud.html', data)
 
@@ -139,38 +169,66 @@ def deleteproduct(request, idproduct): #eliminar usuario desde un adminw
         mensaje = "No se puedo eliminar, revisa los datos"
         messages.error(request, mensaje)
         
-    return redirect('productcrud')
-
-
-
-def stock(request):
-    return render(request, 'web/stock.html')    
+    return redirect('productcrud') 
 
 def ropahombre(request):
     products = newProduct.objects.all()
+    page = request.GET.get('page', 1)
+
+    try:
+        paginator = Paginator(products, 8)
+        products = paginator.page(page)
+    except:
+        raise Http404
     data = {
-        'product' : products
+        'entity' : products,
+        'paginator' : paginator
     }
     return render(request, 'web/ropahombre.html', data)
 
 def ropamujer(request):
     products = newProduct.objects.all()
+    page = request.GET.get('page', 1)
+
+    try:
+        paginator = Paginator(products, 8)
+        products = paginator.page(page)
+    except:
+        raise Http404
     data = {
-        'product' : products
+        'entity' : products,
+        'paginator': paginator
+
     }
     return render(request, 'web/ropamujer.html', data)
 
 def ropanina(request):
     products = newProduct.objects.all()
+    page = request.GET.get('page', 1)
+
+    try:
+        paginator = Paginator(products, 20)
+        products = paginator.page(page)
+    except:
+        raise Http404
     data = {
-        'product' : products
+        'entity' : products,
+        'paginator': paginator
     }
     return render(request, 'web/ropanina.html', data)
 
 def ropanino(request):
     products = newProduct.objects.all()
+    page = request.GET.get('page', 1)
+
+    try:
+        paginator = Paginator(products, 20)
+        products = paginator.page(page)
+    except:
+        raise Http404
     data = {
-        'product' : products
+        'entity' : products,
+        'paginator': paginator
     }
     return render(request, 'web/ropanino.html', data)
 
@@ -248,8 +306,16 @@ def userscrud(request): #listar
     numproducts = products.count()
     numusers = users.count()
     numcontacts = contacts.count()
+    page = request.GET.get('page', 1)
+    
+    try:
+        paginator = Paginator(products, 10)
+        products = paginator.page(page)
+    except:
+        raise Http404
     data = {
-        'users' : users, 'nusers' : numusers, 'ncontacts' : numcontacts, 'nproducts' : numproducts
+        'entity' : users, 'nusers' : numusers, 'ncontacts' : numcontacts, 'nproducts' : numproducts,
+        'paginator': paginator
     }
     return render(request, 'web/userscrud.html', data)
 

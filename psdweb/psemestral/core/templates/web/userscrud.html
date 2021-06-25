@@ -24,7 +24,7 @@
           <th class="text-center">Action</th>
         </tr>
       </thead>
-      {% for u in users %}
+      {% for u in entity %}
         <tr>
           <td>{{ u.id | title}}</td>
           <td>{{ u.nom | title}}</td>
@@ -49,5 +49,8 @@
     </div>
   </div>
   <br>
+  <div>
+    {% include 'web/pagination.html'  %}
+  </div>
   <br>
 {% endblock contenido %}

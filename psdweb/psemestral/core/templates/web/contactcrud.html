@@ -24,7 +24,7 @@
                     <th class="text-center">Action</th>
                 </tr>
             </thead>
-            {% for c in ucontacts %}
+            {% for c in entity %}
             <tr>
               <td>{{ c.id | title}}</td>
               <td>{{ c.name | title}}</td>
@@ -49,5 +49,8 @@
         </div>
     </div>
     <br>
+    <div>
+      {% include 'web/pagination.html'  %}
+    </div>
     <br>
 {% endblock contenido %}

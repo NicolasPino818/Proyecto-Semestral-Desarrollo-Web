@@ -16,7 +16,7 @@
             <h2>Tienda</h2>
         </div>
         <ul class="row">
-        {% for p in product %}
+        {% for p in entity %}
           {%if p.gender == 3%}
           <li class="col-12 col-md-6 col-lg-3">
             
@@ -32,6 +32,9 @@
           </li>
         {% endfor %}
         </ul>
+    </div>
+    <div>
+        {% include 'web/pagination.html'  %}
     </div>
     </section>
 

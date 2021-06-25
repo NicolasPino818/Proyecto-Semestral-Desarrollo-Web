@@ -28,7 +28,7 @@
           <th class="text-center">Action</th>
         </tr>
       </thead>
-      {% for p in product %}
+      {% for p in entity %}
         <tr>
           <td>{{ p.id | title}}</td>
           <td>{{ p.gender | title}}</td>
@@ -56,5 +56,8 @@
     </div>
   </div>
   <br>
+  <div>
+    {% include 'web/pagination.html'  %}
+  </div>
   <br>
 {% endblock contenido %}
