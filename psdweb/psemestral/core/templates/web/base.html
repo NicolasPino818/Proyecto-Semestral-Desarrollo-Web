@@ -23,9 +23,14 @@
     <nav class="navbar navbar-expand-md navbar-dark sticky-top p-md-3 my-sd-nav-bg-color">
       <div class="container">
         <div class="flex-grow-1 text-right">
-          <h5  class="text-white">Mi Cuenta: <a href="{% url 'login' %}" class="text-white 1">Entrar /</a>
-          <a href="{% url 'register' %}" class="text-white 1">registrar</a></h5>
-          <a href="{% url 'menus' %}" class="text-white 1">menu admin</a></h5>
+          {% if user.is_authenticated %}
+            <h5  class="text-white">Mi Cuenta: @{{ user.username }}<a href="{% url 'logout' %}" class="text-white 1">   Salir /</a>
+            <a href="{% url 'menus' %}" class="text-white 1">menu admin</a></h5>
+          {% else %}
+            <h5  class="text-white">Mi Cuenta: <a href="{% url 'login' %}" class="text-white 1">Entrar /</a>
+            <a href="{% url 'register' %}" class="text-white 1">registrar</a></h5>
+          {% endif %}
+          
         </div>
       </div>
     </nav>

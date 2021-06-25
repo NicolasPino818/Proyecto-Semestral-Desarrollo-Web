@@ -18,7 +18,7 @@
           <br>
           <th>ID</th>
           <th>name</th>
-          <th>last name</th>
+          <th>user name</th>
           <th>e-mail</th>
           <th>pass</th>
           <th class="text-center">Action</th>
@@ -27,8 +27,8 @@
       {% for u in entity %}
         <tr>
           <td>{{ u.id | title}}</td>
-          <td>{{ u.nom | title}}</td>
-          <td>{{ u.snom | title}}</td>
+          <td>{{ u.name | title}}</td>
+          <td>{{ u.username | title}}</td>
           <td>{{ u.email | title}}</td>
           <td>{{ u.password | title}}</td>
           <td class="text-center">

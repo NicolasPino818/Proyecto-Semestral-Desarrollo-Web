@@ -5,8 +5,8 @@ from django.db import models
 
 class user(models.Model):
     # verbose_name='nombre'
-    nom = models.CharField( max_length=50)
-    snom = models.CharField( max_length=50)
+    name = models.CharField( max_length=50)
+    username = models.CharField( max_length=50)
     email = models.EmailField(('email address'), unique=True)
     password = models.CharField( max_length=50)
 

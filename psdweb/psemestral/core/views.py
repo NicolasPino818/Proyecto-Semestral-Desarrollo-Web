@@ -256,11 +256,28 @@ def registro(request): #registro user
         mensaje = "No se puedo crear el usuario, revisa los datos"
         messages.error(request, mensaje)
 
-    return render(request, 'web/register.html', data)
+    return render(request, 'registration/register.html', data)
 
 def login(request):
     return render(request, 'web/login.html')
-    
+
+'''def login(request):
+
+    users = user.objects.all()
+    data = {
+        'users' : users
+    }
+    print(request.email)
+    print(request.GET['email'])
+    print(request.GET.get('email'))
+    if user.email == request.email:
+        print("si existe la cuenta, esta logeado señor" + request.email)
+        return redirect('index')
+    else:
+        print("datos ingresados no existen")      
+
+    return render(request, 'registration/login.html', data)
+   ''' 
 
 
 # End login and register by user
