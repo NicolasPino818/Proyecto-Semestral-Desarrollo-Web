@@ -1,8 +1,6 @@
 {% extends 'web/base.html' %}
 {% load static %}
-{% load bootstrap4 %}
-{% bootstrap_css %} 
-{% load widget_tweaks %}
+{% load crispy_forms_tags %}
 {% block contenido %}
 
     <br>
@@ -12,31 +10,12 @@
                     <h3 class="panel-title">Registro de Usuarios <small>by ReplyModa</small></h3>
                     </div>
                     <div class="panel-body">
-                    
                     <form role="form" method="POST">
                         {% csrf_token %}
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <label for="NOMBRE">NOMBRE</label>
-                                        {{ reguform.name |add_class:"form-control"}} 
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-                                    <div class="form-group">
-                                        <label for="SEGUNDO NOMBRE"> NOMBRE DE USUARIO</label>
-                                         {{reguform.username |add_class:"form-control"}}  
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="E-MAIL">E-MAIL</label>
-                                 {{reguform.email |add_class:"form-control"}}
-                                 <label for="contraseña">contraseña</label>
-                                <div class="center">
-                                    <div class="form-group">
-                                          {{reguform.password |add_class:"form-control"}}
+                                        {{ form | crispy}} 
                                     </div>
                                 </div>
                             </div>

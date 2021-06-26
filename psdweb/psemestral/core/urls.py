@@ -9,7 +9,7 @@ urlpatterns = [
     path("contactcrud/", views.contactcrud , name="contactcrud"), #listar
     path("lcontdel/<iduserc>/", views.lcontdel , name="lcontdel"), #eliminar
     # fin contacto mensaje
-    path("login/", views.login, name="login"),
+    
     path("modelo/", views.modelo, name="modelo"),
     path("nosotros/", views.nosotros , name="nosotros"),
     #producto
@@ -27,8 +27,10 @@ urlpatterns = [
     path("userscrud/", views.userscrud, name="userscrud"), #listar
     path("eliminar/<iduser>/", views.eliminar, name="eliminar"), #eliminar
     path("register/", views.registro, name="register"), #registrar
-    #fin creliminarud
+    path("login/", views.loginuser, name="loginuser"), #login
     path("edituser/<iduser>", views.edituser, name="edituser"),
+    #fin creliminarud
+    
     
     #MENUS IMPORTANTES
      path("menus/", views.menus, name="menus"),

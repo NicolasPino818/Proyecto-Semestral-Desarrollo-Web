@@ -2,10 +2,12 @@ from django.http.request import HttpRequest
 from django.http.response import Http404
 from django.shortcuts import render, redirect
 from .models import user, usercontact, newProduct
-from .forms import contactForm, registroUser, addProduct
+from .forms import contactForm, registroUser, addProduct, CustomUserCreationForm
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.http import Http404
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -238,59 +240,39 @@ def menus(request):
 #login and register by user
 #stock
 def registro(request): #registro user
-    
-    reguser = registroUser()
-    data = {'reguform' : reguser}
+
+    data = {
+        'form' : CustomUserCreationForm()
+    }
+    formulario = CustomUserCreationForm(data=request.POST)
     if request.method == 'POST':
-        reguser = registroUser(data = request.POST) 
-        if reguser.is_valid():
-            reguser.save()
-            print("Usuario Creado Correctamente")
-            mensaje = "Usuario Creado Correctamente"
-            messages.success(request, mensaje)
+        if formulario.is_valid():
+            formulario.save()
+            reguser = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            login(request, reguser)
+            print("te has registrado correctamente")
             return redirect('index')
         else:
-            data["reguform"] = reguser;  
+            data['form'] = formulario
     else:
-        print("No se puedo crear el usuario, revisa los datos")
-        mensaje = "No se puedo crear el usuario, revisa los datos"
-        messages.error(request, mensaje)
-
+        print('error en el formulario')
+        
     return render(request, 'registration/register.html', data)
 
-def login(request):
+def loginuser(request):
     return render(request, 'web/login.html')
-
-'''def login(request):
-
-    users = user.objects.all()
-    data = {
-        'users' : users
-    }
-    print(request.email)
-    print(request.GET['email'])
-    print(request.GET.get('email'))
-    if user.email == request.email:
-        print("si existe la cuenta, esta logeado señor" + request.email)
-        return redirect('index')
-    else:
-        print("datos ingresados no existen")      
-
-    return render(request, 'registration/login.html', data)
-   ''' 
-
 
 # End login and register by user
 
 #funciones para el crud
 
 def edituser(request, iduser): #editar usuario desde un administrador
-    euser = user.objects.get(id=iduser)
+    euser = User.objects.get(id=iduser)
     data = {
-    'form': registroUser(instance=euser) 
+    'form': CustomUserCreationForm(instance=euser) 
     }
     if request.method == 'POST':
-        formulario_edit = registroUser(data=request.POST, instance=euser)
+        formulario_edit = CustomUserCreationForm(data=request.POST, instance=euser)
         if formulario_edit.is_valid:
             formulario_edit.save()
             data['mensaje'] = "usuario editado correctamente"
@@ -300,10 +282,10 @@ def edituser(request, iduser): #editar usuario desde un administrador
     return render(request, 'web/edituser.html', data)
 
 def eliminar(request, iduser): #eliminar usuario desde un adminw
-    users = user.objects.get(id=iduser)
+    users = User.objects.get(id=iduser)
 
     try:
-        user.delete(users)
+        User.delete(users)
         print("Eliminado Correctamente")
         mensaje = "Eliminado Correctamente"
         messages.success(request, mensaje)
@@ -317,7 +299,7 @@ def eliminar(request, iduser): #eliminar usuario desde un adminw
 
 
 def userscrud(request): #listar
-    users = user.objects.all()
+    users = User.objects.all()
     contacts = usercontact.objects.all()
     products = newProduct.objects.all()
     numproducts = products.count()

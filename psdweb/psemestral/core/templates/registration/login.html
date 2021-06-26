@@ -1,8 +1,6 @@
 {% extends 'web/base.html' %}
 {% load static %}
-{% load bootstrap4 %}
-{% bootstrap_css %} 
-{% load widget_tweaks %}
+{% load crispy_forms_tags %}
 {% block contenido %}
     {% block css %}
         <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
@@ -21,7 +19,7 @@
                     alt="">
                 <form class="form-signin" method="POST">
                     {% csrf_token %}
-                    {{form}}
+                    {{form | crispy}}
                     <!--<input type="text" class="form-control" id="email" name="email" placeholder="email" required autofocus>-->
                     <!--<input type="password" class="form-control" id="password" name="password" placeholder="password" required>-->
                     <button class="btn btn-lg btn-primary btn-block" type="submit">
