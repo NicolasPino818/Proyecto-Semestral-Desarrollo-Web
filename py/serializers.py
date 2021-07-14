@@ -1,35 +1,29 @@
 #Serializers
-#Hombre y Mujer (Adolescente y Adulto)
 from rest_framework import serializers
-from core.models import ropa-hombre
+from core.models import productos
 
-class ropa-hombreSerializer(serializers.ModelSerializer):
+class productosSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ropa-hombre
-        fields = ['Talla', 'Marca', 'Categoria']
+        model = productos
+        fields = ['Ropa', 'Talla', 'Modelo', 'Categoria']
+        email = serializers.EmailField()
+        content = serializers.CharField(max_length=200)
+        created = serializers.DateTimeField()
 
-from rest_framework import serializers
-from core.models import ropa-mujer
+    def create(self, validated_data):
+        return productos(**validated_data)
 
-class ropa-mujerSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ropa-mujer
-        fields = ['Talla', 'Marca', 'Categoria']        
+    def update(self, instance, validated_data):
+        instance.model = validated_data.get('model', instance.model)
+        instance.fields = validated_data.get('fields', instance.fields)
+        instance.email = validated_data.get('email', instance.email)
+        instance.content = validated_data.get('content', instance.content)
+        instance.created = validated_data.get('created', instance.created)
+        return instance
 
-#Niño y Niña        
-from rest_framework import serializers
-from core.models import ropa-nino
+def new_func():
+    productos = serializer.save()
 
-class ropa-ninoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ropa-nino
-        fields = ['Talla', 'Marca', 'Categoria']        
-        
-from rest_framework import serializers
-from core.models import ropa-nina
+    serializer = ProductosSerializer(data=data)
 
-class ropa-ninaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = ropa-nina
-        fields = ['Talla', 'Marca', 'Categoria']        
-        
+new_func()
